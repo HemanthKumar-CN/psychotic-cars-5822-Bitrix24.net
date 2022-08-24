@@ -1,0 +1,78 @@
+.mainContainer {
+  /* border: 1px solid red; */
+  height: auto;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  background-image: url(https://b24-chnk01.bitrix24.in/bitrix/templates/bitrix24/themes/light/atmosphere/atmosphere2.jpg);
+  position: fixed;
+}
+.leftSlider {
+  /* border: 1px solid red; */
+  height: 100vh;
+  width: 5%;
+}
+.middleContainer {
+  border: 0.1px solid white;
+  height: 200vh;
+  width: 90%;
+  position: st;
+  scroll-behavior: smooth;
+}
+.rightSlider {
+  /* border: 1px solid red; */
+  height: 100vh;
+  width: 5%;
+}
+/* Navbar....... */
+.navbar {
+  height: 65px;
+  width: 100%;
+  /* border: 1px solid red; */
+}
+.bitrixLogo {
+  /* border: 1px solid red; */
+  height: 30px;
+  width: 120px;
+  margin-top: 1%;
+}
+.logoSpan {
+  color: #fff;
+  margin-right: 7px;
+  font-size: 25px;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+.logoSpan2 {
+  color: #2fc6f7;
+  font-weight: bold;
+  font-size: 25px;
+}
+.rightIcon {
+  /* border: 1px solid red; */
+  height: 60px;
+  width: 100%;
+
+  font-size: 21px;
+  text-align: center;
+  color: white;
+  position: relative;
+  transition: all 0.6s ease;
+}
+
+.logoBorder {
+  border-radius: 50%;
+  height: 35px;
+  width: 35px;
+  background-color: rgb(47, 129, 199);
+  /* border: 1px solid red; */
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+.rightIcon:hover {
+  background-color: #f5f6f6;
+}
