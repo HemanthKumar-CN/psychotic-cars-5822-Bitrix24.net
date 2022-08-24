@@ -5,6 +5,7 @@ import { IoIosNotificationsOutline } from "react-icons/io";
 import { BsChatDots } from "react-icons/bs";
 import { BsSearch } from "react-icons/bs";
 import { MailLogo } from "../../Components/MailLogo";
+import { RightSlider } from "../../Components/Right Slider/RightSlider";
 export const MainPage = () => {
   return (
     <div className={classes.mainContainer}>
@@ -18,29 +19,7 @@ export const MainPage = () => {
         </div>
       </div>
       <div className={classes.rightSlider}>
-        <div className={classes.rightIcon}>
-          <div className={classes.logoBorder}>
-            <BiHelpCircle style={{ paddingTop: "5px" }} />
-          </div>
-        </div>
-        <div className={classes.rightIcon}>
-          <div className={classes.logoBorder}>
-            <IoIosNotificationsOutline style={{ paddingTop: "5px" }} />
-          </div>
-        </div>
-        <div className={classes.rightIcon}>
-          <div className={classes.logoBorder}>
-            <BsChatDots style={{ paddingTop: "5px" }} />
-          </div>
-        </div>
-        <div className={classes.rightIcon}>
-          <div className={classes.logoBorder}>
-            <BsSearch style={{ paddingTop: "5px" }} />
-          </div>
-        </div>
-        <div className={classes.rightIcon}>
-          <MailLogo style={{ paddingTop: "5px" }} />
-        </div>
+        <RightSlider/>
       </div>
     </div>
   );
