@@ -53,16 +53,15 @@ export const Homenavbar = () => {
               color: "#525C69",
               backgroundColor: "#BDF300",
               marginLeft: "40px",
-              //   borderRadius: "10%",
             }}
           >
             Start for free
           </button>
-          <div style={{ width: "50px", display: "flex", marginRight: "0px" }}>
+          <div style={{ width: "50px", display: "flex", marginRight: "0px",marginLeft:"50px" }}>
             <Avatar bg="black" size="xs" mt="2" />
             <p style={{ marginLeft: "2px", marginTop: "8px" }}>Login</p>
           </div>
-          <div style={{ width: "50px", display: "flex" }}>
+          <div style={{ width: "50px", display: "flex",marginLeft:"40px" }}>
             <EditIcon mt="3" />
             <p style={{ marginLeft: "2px", marginTop: "9px" }}>EN</p>
           </div>

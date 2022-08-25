@@ -3,11 +3,11 @@ import { HomeNavbar } from "./Components/HomeNavbar";
 import { Homepage } from "./Pages/Homepage";
 
 function App() {
-  return <div>
-   {/* <HomeNavbar/> */}
-   <Homepage/>
-   
-  </div>;
+  return (
+    <div>
+      <Homepage />
+    </div>
+  );
 }
 
 export default App;

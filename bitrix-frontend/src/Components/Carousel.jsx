@@ -25,19 +25,19 @@ export default class Fade extends Component {
         {/* <h2>Fade</h2> */}
         <Slider {...settings}>
           <div>
-            <img src="https://i.postimg.cc/CxGjwgLn/Bitrix-1.png" alt="image1"/>
+            <img src="https://i.postimg.cc/CxGjwgLn/Bitrix-1.png" alt=""/>
           </div>
           <div>
-            <img src="https://i.postimg.cc/5tf230L1/Bitrix-2.png" alt="image2"/>
+            <img src="https://i.postimg.cc/5tf230L1/Bitrix-2.png" alt=""/>
           </div>
           <div>
-            <img src="https://i.postimg.cc/zDHH3ykP/Bitrix-3.png" alt="image3"/>
+            <img src="https://i.postimg.cc/zDHH3ykP/Bitrix-3.png" alt=""/>
           </div>
           <div>
-            <img src="https://i.postimg.cc/D01z6bjv/Bitrix-4.png" alt="image4"/>
+            <img src="https://i.postimg.cc/D01z6bjv/Bitrix-4.png" alt=""/>
           </div>
           <div>
-            <img src="https://i.postimg.cc/XvX7hPHD/Bitrix-5.png" alt="image5"/>
+            <img src="https://i.postimg.cc/XvX7hPHD/Bitrix-5.png" alt=""/>
           </div>
         </Slider>
       </div>
