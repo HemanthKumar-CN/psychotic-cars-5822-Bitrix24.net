@@ -11,6 +11,7 @@ const Div = styled.div`
   transform: translate(-50%, -50%);
   cursor: pointer;
   background-color: rgb(201, 124, 110);
+  font-size: 21px;
 `;
 export const MailLogo = () => {
   return <Div>K</Div>;
