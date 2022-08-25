@@ -52,7 +52,7 @@ app.post("/tasks", async (req, res) => {
   return res.send({ message: "task created", task });
 });
 
-app.listen(8080, async () => {
+app.listen(process.env.PORT, async () => {
   try {
     await connection;
     console.log("Connected to Database");
