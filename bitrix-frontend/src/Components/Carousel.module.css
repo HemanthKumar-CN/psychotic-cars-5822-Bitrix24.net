@@ -1,0 +1,23 @@
+.slick-dots li.slick-active button:before {
+    color: #881798;
+  }
+  
+  .slick-prev:before,
+  .slick-next:before {
+    /* color: darkgray; */
+    background: darkgray;
+    border-radius: 50%;
+    width: 30px;
+    position: relative;
+    bottom: 50px;
+  }
+
+
+
+  .slick-next:before{
+    right: 20px;
+  }
+
+  .slick-prev:before{
+    right: 20px;
+  }
