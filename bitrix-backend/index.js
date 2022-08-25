@@ -1,13 +1,20 @@
 const express = require("express");
 const app = express();
+require('dotenv').config();
+const cors = require("cors")
+
 const { connection } = require("./config/config");
 const TasksModel = require("./models/Tasks.model");
+const userRouter = require("./controller/user");
 
 app.use(express.json());
+app.use(cors())
 
 app.get("/", (req, res) => {
   res.send("HomePage");
 });
+
+app.use("/", userRouter)
 
 app.get("/tasks", async (req, res) => {
   // const { userID } = req.body;
