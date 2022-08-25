@@ -1,10 +1,5 @@
 import React from "react";
 import classes from "./MainPage.module.css";
-import { BiHelpCircle } from "react-icons/bi";
-import { IoIosNotificationsOutline } from "react-icons/io";
-import { BsChatDots } from "react-icons/bs";
-import { BsSearch } from "react-icons/bs";
-import { MailLogo } from "../../Components/MailLogo";
 import { RightSlider } from "../../Components/Right Slider/RightSlider";
 export const MainPage = () => {
   return (
@@ -19,7 +14,7 @@ export const MainPage = () => {
         </div>
       </div>
       <div className={classes.rightSlider}>
-        <RightSlider/>
+        <RightSlider />
       </div>
     </div>
   );
