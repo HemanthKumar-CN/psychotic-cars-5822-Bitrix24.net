@@ -6,7 +6,9 @@ import { RealTime } from "../../Components/RealTime";
 export const MainPage = () => {
   return (
     <div className={classes.mainContainer}>
-      <div className={classes.leftSlider}></div>
+      <div className={classes.leftSlider}>
+        
+      </div>
       <div className={classes.middleContainer}>
         <div className={classes.navbar}>
           <div className={classes.bitrixLogo}>
