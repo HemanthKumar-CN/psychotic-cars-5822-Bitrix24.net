@@ -52,6 +52,40 @@ app.post("/tasks", async (req, res) => {
   return res.send({ message: "task created", task });
 });
 
+app.patch("/:taskId/edit", async (req, res) => {
+  const { taskId } = req.params;
+  const { userID } = req.body;
+
+  const task = await TasksModel.findOne({ _id: taskId });
+
+  if (task.userID == userID) {
+    const updated_Note = await TasksModel.findOneAndUpdate(
+      { _id: taskId },
+      req.body,
+      { new: true },
+    );
+
+    return res.send({ message: "Successfully updated", updated_Note });
+  } else {
+    return res.send("You are not authorized to do this task");
+  }
+});
+
+app.delete("/:taskId/delete", async (req, res) => {
+  const { taskId } = req.params;
+  const { userID } = req.body;
+
+  const task = await TasksModel.findOne({ _id: taskId });
+
+  if (task.userID == userID) {
+    await TasksModel.findOneAndDelete({ _id: taskId });
+
+    return res.send({ message: "Successfully Deleted" });
+  } else {
+    return res.send("You are not authorized to do this task");
+  }
+});
+
 app.listen(process.env.PORT, async () => {
   try {
     await connection;
