@@ -32,18 +32,26 @@
 .navbar {
   height: 65px;
   width: 100%;
+<<<<<<< HEAD
+  /* border: 1px solid red; */
+  border-bottom: 1px solid white;
+  display: flex;
+=======
   border: 1px solid red;
+>>>>>>> ec9622956242eb4a1067eb1fe895c2c09a0010c8
 }
 .bitrixLogo {
   /* border: 1px solid red; */
-  height: 30px;
+  height: 40px;
   width: 120px;
   margin-top: 1%;
+  cursor: pointer;
+  margin-left: 20px;
 }
 .logoSpan {
   color: #fff;
   margin-right: 7px;
-  font-size: 25px;
+  font-size: 24px;
   letter-spacing: 1px;
   font-weight: bold;
 }
@@ -52,3 +60,31 @@
   font-weight: bold;
   font-size: 25px;
 }
+.navbar_search {
+  /* border: 1px solid red; */
+  margin-left: 100px;
+  width: 250px;
+  height: 40px;
+  margin-top: 1.2%;
+}
+.real_time {
+  /* border: 1px solid red; */
+  width: 180px;
+  color: white;
+  font-size: 30px;
+  height: 100%;
+  padding-top: 8px;
+  margin-left: 20px;
+}
+.navbar_email {
+  /* border: 1px solid red; */
+  width: 250px;
+  padding-top: 14px;
+  height: 100%;
+  display: flex;
+  color: white;
+  gap: 10px;
+}
+/* .navbar_email:hover{
+  background-color: rgb(186, 179, 179);
+} */

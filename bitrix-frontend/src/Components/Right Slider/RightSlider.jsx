@@ -9,27 +9,27 @@ export const RightSlider = () => {
   return (
     <div>
       <div className={classes.rightIcon}>
-        <HelpDrawer />
+        {/* <HelpDrawer /> */}
         <div className={classes.logoBorder}>
           <BiHelpCircle
             onClick={() => console.log("krishan")}
-            style={{ paddingTop: "5px" }}
+            style={{ paddingTop: "5px",margin:"auto" }}
           />
         </div>
       </div>
       <div className={classes.rightIcon}>
         <div className={classes.logoBorder}>
-          <IoIosNotificationsOutline style={{ paddingTop: "5px" }} />
+          <IoIosNotificationsOutline style={{ paddingTop: "5px",margin:"auto" }} />
         </div>
       </div>
       <div className={classes.rightIcon}>
         <div className={classes.logoBorder}>
-          <BsChatDots style={{ paddingTop: "5px" }} />
+          <BsChatDots style={{ paddingTop: "5px",margin:"auto" }} />
         </div>
       </div>
       <div className={classes.rightIcon}>
         <div className={classes.logoBorder}>
-          <BiMessageSquareCheck style={{ paddingTop: "5px" }} />
+          <BiMessageSquareCheck style={{ paddingTop: "5px",margin:"auto" }} />
         </div>
       </div>
       <div className={classes.rightIcon}>
