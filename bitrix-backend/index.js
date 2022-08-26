@@ -6,6 +6,7 @@ const cors = require("cors")
 const { connection } = require("./config/config");
 const TasksModel = require("./models/Tasks.model");
 const userRouter = require("./controller/user");
+const passport = require("./config/googleOauth")
 
 app.use(express.json());
 app.use(cors())
@@ -92,6 +93,18 @@ app.delete("/:taskId/delete", async (req, res) => {
     return res.send("You are not authorized to do this task");
   }
 });
+
+app.get('/auth/google',
+  passport.authenticate('google', { scope: ['openid', 'profile', 'email'] }));
+
+  app.get('/auth/google/callback', 
+  passport.authenticate('google', { failureRedirect: '/login', session:false}),
+  function(req, res) {
+    // Successful authentication, redirect home.
+    // console.log(req.user)
+    // res.redirect('/');
+    res.send({"message": "Login Successful", "user":req.user})
+  });
 
 app.listen(process.env.PORT, async () => {
   try {
