@@ -28,7 +28,8 @@
 .navbar {
   height: 65px;
   width: 100%;
-  border: 1px solid red;
+  /* border: 1px solid red; */
+  border-bottom: 1px solid white;
   display: flex;
 }
 .bitrixLogo {
@@ -37,6 +38,7 @@
   width: 120px;
   margin-top: 1%;
   cursor: pointer;
+  margin-left: 20px;
 }
 .logoSpan {
   color: #fff;
@@ -58,10 +60,22 @@
   margin-top: 1%;
 }
 .real_time {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   width: 180px;
   color: white;
   font-size: 30px;
   height: 100%;
   padding-top: 8px;
 }
+.navbar_email {
+  /* border: 1px solid red; */
+  width: 250px;
+  padding-top: 14px;
+  height: 100%;
+  display: flex;
+  color: white;
+  gap: 10px;
+}
+/* .navbar_email:hover{
+  background-color: rgb(186, 179, 179);
+} */
