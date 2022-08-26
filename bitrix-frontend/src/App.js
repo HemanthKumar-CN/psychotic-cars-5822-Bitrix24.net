@@ -6,7 +6,8 @@ import { MainPage } from "./Pages/Main Page/MainPage";
 function App() {
   return (
     <div>
-      <Homepage />
+      {/* <Homepage /> */}
+      <MainPage/>
     </div>
   );
 }

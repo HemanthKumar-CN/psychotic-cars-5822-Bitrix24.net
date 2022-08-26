@@ -1,5 +1,5 @@
 .mainContainer {
-  /* border: 1px solid red; */
+  /* border: 3px solid red; */
   height: auto;
   width: 100%;
   margin: auto;
@@ -9,6 +9,10 @@
 }
 .leftSlider {
   /* border: 1px solid red; */
+  color:rgba(255, 255, 255, 0.701);
+  justify-content: center;
+  text-align: center;
+  padding: 5px;
   height: 100vh;
   width: 5%;
 }
@@ -28,7 +32,7 @@
 .navbar {
   height: 65px;
   width: 100%;
-  /* border: 1px solid red; */
+  border: 1px solid red;
 }
 .bitrixLogo {
   /* border: 1px solid red; */
