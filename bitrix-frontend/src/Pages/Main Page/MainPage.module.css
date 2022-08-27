@@ -9,7 +9,7 @@
 }
 .leftSlider {
   /* border: 1px solid red; */
-  color:rgba(255, 255, 255, 0.701);
+  color: rgba(255, 255, 255, 0.701);
   justify-content: center;
   text-align: center;
   padding: 5px;
@@ -32,13 +32,12 @@
 .navbar {
   height: 65px;
   width: 100%;
-<<<<<<< HEAD
+
   /* border: 1px solid red; */
   border-bottom: 1px solid white;
   display: flex;
-=======
-  border: 1px solid red;
->>>>>>> ec9622956242eb4a1067eb1fe895c2c09a0010c8
+
+  /* border: 1px solid red; */
 }
 .bitrixLogo {
   /* border: 1px solid red; */
@@ -84,7 +83,15 @@
   display: flex;
   color: white;
   gap: 10px;
+  transition: all 0.9s ease;
 }
-/* .navbar_email:hover{
-  background-color: rgb(186, 179, 179);
-} */
+.navbar_email:hover {
+  background-color: rgb(52, 95, 152);
+}
+.upgrade_button {
+  /* border: 1px solid red; */
+  width: 150px;
+  height: 100%;
+  padding-top: 15px;
+  margin-left: 10px;
+}
