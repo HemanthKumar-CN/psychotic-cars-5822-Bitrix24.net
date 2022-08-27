@@ -27,6 +27,25 @@ const reducer = (state = initialState, action) => {
         ...state,
         isLoading: false,
         isError: true,
+      };
+      case types.GET_TASK_REQUEST:
+      return {
+        ...state,
+        isLoading: true,
+        isError: false,
+      };
+      case types.GET_TASK_SUCCESS:
+      return {
+        ...state,
+        tasks: payload,
+        isLoading: false,
+        isError: false,
+      };
+      case types.GET_TASK_FAILURE:
+      return {
+        ...state,
+        isLoading: false,
+        isError: true,
       };     
 
     default:

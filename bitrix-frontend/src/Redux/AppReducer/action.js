@@ -17,4 +17,19 @@ const addTask = (payload) => (dispatch) => {
     });
 };
 
-export { addTask };
+const getTask = () => (dispatch) => {
+  dispatch({ type: types.GET_TASK_REQUEST });
+  return axios
+    .get("http://localhost:8000/tasks")
+    .then((r) => {
+      console.log(r.data);
+      dispatch({ type: types.GET_TASK_SUCCESS, payload: r.data });
+      return types.GET_TASK_SUCCESS;
+    })
+    .catch((e) => {
+      dispatch({ type: types.GET_TASK_FAILURE, payload: e });
+      return types.GET_TASK_FAILURE;
+    });
+};
+
+export { addTask,getTask };
