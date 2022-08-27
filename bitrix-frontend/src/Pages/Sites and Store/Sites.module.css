@@ -1,0 +1,39 @@
+.navbar1 {
+  width: 100%;
+  height: 55px;
+  background-color: #ffff;
+  padding-left: 20px;
+  padding-top: 17px;
+  color: #545c6a;
+  font-size: 15px;
+  font-family: "OpenSans-Semibold", "Helvetica Neue", Arial, Helvetica,
+    sans-serif;
+  font-weight: 530;
+  display: flex;
+}
+.navbar2 {
+  height: 70px;
+  width: 100%;
+  /* border: 1px solid red; */
+  padding: 15px;
+  margin-bottom: 10px;
+}
+.ads {
+  width: 100%;
+  height: 450px;
+  /* border: 1px solid red; */
+  margin-top: 20px;
+  display: flex;
+}
+.ads2 {
+  height: max-content;
+  width: max-content;
+  margin: 50px 100px 100px 130px;
+  border-radius: 10px;
+}
+.ads3 {
+  /* border: 1px solid red; */
+  height: max-content;
+  width: 300px;
+  margin: 5px 100px 100px -102px;
+}

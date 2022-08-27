@@ -1,13 +1,12 @@
 import React from "react";
 import classes from "./MainPage.module.css";
 import { RightSlider } from "../../Components/Right Slider/RightSlider";
-
+import { SitesStore } from "../Sites and Store/SitesStore";
 import { SearchBar } from "../../Components/SearchBar";
 import { RealTime } from "../../Components/RealTime";
 
 import { LeftSlider } from "../../Components/LeftSlider";
 import { MdBuild } from "react-icons/md";
-
 
 import {
   Avatar,
@@ -26,7 +25,7 @@ import {
   Box,
   Divider,
 } from "@chakra-ui/react";
-import { LeftSlider } from "../../Components/LeftSlider";
+
 import { AiOutlineRight, AiOutlineStar } from "react-icons/ai";
 import { MdFlashOn } from "react-icons/md";
 import { IoMdSettings } from "react-icons/io";
@@ -99,7 +98,8 @@ export const MainPage = () => {
             </Button>
           </div>
         </div>
-
+        {/* <SitesStore /> */}
+        
         <div className={classes.navbar1}>
           <div
             style={{
