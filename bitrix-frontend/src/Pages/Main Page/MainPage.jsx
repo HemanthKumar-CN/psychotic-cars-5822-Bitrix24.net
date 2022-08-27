@@ -4,6 +4,7 @@ import { RightSlider } from "../../Components/Right Slider/RightSlider";
 import { SitesStore } from "../Sites and Store/SitesStore";
 import { SearchBar } from "../../Components/SearchBar";
 import { RealTime } from "../../Components/RealTime";
+import  AddTask  from '../../Components/AddTask/AddTask'
 
 import { LeftSlider } from "../../Components/LeftSlider";
 import { MdBuild } from "react-icons/md";
@@ -146,8 +147,8 @@ export const MainPage = () => {
               backgroundColor="#BBED21"
               w="110px"
               h="40px"
-            >
-              <Button
+            ><AddTask />
+              {/* <Button
                 color={"#535C69"}
                 fontSize="12px"
                 fontWeight="700"
@@ -155,7 +156,7 @@ export const MainPage = () => {
                 h="40px"
               >
                 NEW TASK
-              </Button>
+              </Button> */}
               <IconButton
                 aria-label="Add to friends"
                 h="40px"

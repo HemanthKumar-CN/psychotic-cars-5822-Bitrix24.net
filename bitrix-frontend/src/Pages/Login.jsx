@@ -55,8 +55,9 @@ export default function UserLogin() {
     if (email && password) {
       dispatch(login({ email, password })).then((r) => {
         console.log(r)
-        // localStorage.setItem("token", r.token);
-        if (r.type === "LOGIN_SUCCESS") {
+        
+        if (r === "LOGIN_SUCCESS") {
+          localStorage.setItem("email", JSON.stringify(email));
           navigate(comingFrom, { replace: true });
         }
       });
@@ -86,11 +87,7 @@ export default function UserLogin() {
           <Heading fontSize={"4xl"} textAlign={"left"} fontWeight={"normal"}>
             Bitrix24 Login
           </Heading>
-          <Divider />
-          <FormControl id="name">
-            <FormLabel>Name</FormLabel>
-            <Input type="name" onChange={(e) => setUsername(e.target.value)} />
-          </FormControl>
+          <Divider />          
           <FormControl id="email">
             <FormLabel>Email address</FormLabel>
             <Input type="email" onChange={(e) => setEmail(e.target.value)} />
