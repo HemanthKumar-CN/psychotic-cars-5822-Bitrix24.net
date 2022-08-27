@@ -1,13 +1,12 @@
 import React from "react";
 import classes from "./MainPage.module.css";
 import { RightSlider } from "../../Components/Right Slider/RightSlider";
-<<<<<<< HEAD
+
 import { SearchBar } from "../../Components/SearchBar";
 import { RealTime } from "../../Components/RealTime";
 import { Avatar, Select, WrapItem } from "@chakra-ui/react";
-=======
+
 import { LeftSlider } from "../../Components/LeftSlider";
->>>>>>> ec9622956242eb4a1067eb1fe895c2c09a0010c8
 export const MainPage = () => {
   return (
     <div className={classes.mainContainer}>
