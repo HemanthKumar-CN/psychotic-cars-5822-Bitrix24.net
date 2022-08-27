@@ -39,13 +39,27 @@ export const Homenavbar = () => {
           mt="2"
           mr="0"
         >
-          <Text color="black" fontWeight="600">TOOLS</Text>
-          <Text color="black" fontWeight="600">PRICING</Text>
-          <Text color="black" fontWeight="600">SOLUTIONS</Text>
-          <Text color="black" fontWeight="600">PARTNERS</Text>
-          <Text color="black" fontWeight="600">APPS</Text>
-          <Text color="black" fontWeight="600">BLOG</Text>
-          <Text color="black" fontWeight="600">SUPPORT</Text>
+          <Text color="black" fontWeight="600">
+            TOOLS
+          </Text>
+          <Text color="black" fontWeight="600">
+            PRICING
+          </Text>
+          <Text color="black" fontWeight="600">
+            SOLUTIONS
+          </Text>
+          <Text color="black" fontWeight="600">
+            PARTNERS
+          </Text>
+          <Text color="black" fontWeight="600">
+            APPS
+          </Text>
+          <Text color="black" fontWeight="600">
+            BLOG
+          </Text>
+          <Text color="black" fontWeight="600">
+            SUPPORT
+          </Text>
           <button
             style={{
               width: "140px",
@@ -58,11 +72,20 @@ export const Homenavbar = () => {
           >
             Start for free
           </button>
-          <div  style={{ width: "50px", display: "flex", marginRight: "0px",marginLeft:"50px" }}>
-            <Link to={'/login'}><Avatar bg="black" size="xs" mt="2" />
-            <p style={{ marginLeft: "2px", marginTop: "8px" }}>Login</p></Link>
-          </div>
-          <div style={{ width: "50px", display: "flex",marginLeft:"40px" }}>
+          <Link to={"/login"}>
+            <div
+              style={{
+                width: "50px",
+                display: "flex",
+                marginRight: "0px",
+                marginLeft: "50px",
+              }}
+            >
+              <Avatar bg="black" size="xs" mt="2" />
+              <p style={{ marginLeft: "2px", marginTop: "8px" }}>Login</p>
+            </div>
+          </Link>
+          <div style={{ width: "50px", display: "flex", marginLeft: "40px" }}>
             <EditIcon mt="3" />
             <p style={{ marginLeft: "2px", marginTop: "9px" }}>EN</p>
           </div>

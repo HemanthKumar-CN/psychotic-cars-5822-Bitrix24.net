@@ -17,11 +17,12 @@ import { getTask } from "../Redux/AppReducer/action";
 
 export const Tasktable = () => {
   const tasks = useSelector((state) => state.AppReducer.tasks);
+  const token= localStorage.getItem("token")
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getTask());
+    dispatch(getTask(token));
   }, []);
-  console.log(tasks);
+  // console.log(tasks);
   return (
     <div>
       <TableContainer>
@@ -44,27 +45,27 @@ export const Tasktable = () => {
                     <div style={{ display: "flex", gap: "5px" }}>
                       <IconButton icon={<EditIcon />} size="xs" />
                       <IconButton icon={<DeleteIcon />} size="xs" />
-                      {e.name}
+                      
                     </div>
                   </Td>
-                  <Td> {e.active}</Td>
+                  <Td> </Td>
                   <Td>
                     <Tag
                       backgroundColor="rgb(241,184,59)"
                       color="white"
                       variant="solid"
                     >
-                      {e.deadline}
+                      
                     </Tag>
                   </Td>
                   <Td>
                     <div style={{ display: "flex", gap: "5px" }}>
-                      <FaUserCircle size="20px" /> {e.createdby}
+                      <FaUserCircle size="20px" />
                     </div>
                   </Td>
                   <Td>
                     <div style={{ display: "flex", gap: "5px" }}>
-                      <FaUserCircle size="20px" /> {e.res}
+                      <FaUserCircle size="20px" /> 
                     </div>
                   </Td>
                   <Td>
@@ -73,7 +74,7 @@ export const Tasktable = () => {
                       color="gray"
                       variant="solid"
                     >
-                      {e.tag}
+                      
                     </Tag>
                   </Td>
                 </Tr>
