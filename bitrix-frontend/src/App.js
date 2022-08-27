@@ -10,7 +10,7 @@ function App() {
   return (
     <div>
       {/* <Homepage /> */}
-      <MainPage/>
+   
     </div>
   );
 
