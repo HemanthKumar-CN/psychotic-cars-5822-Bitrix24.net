@@ -8,6 +8,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { EditIcon } from "@chakra-ui/icons";
+import { Link } from "react-router-dom";
 
 export const Homenavbar = () => {
   return (
@@ -57,9 +58,9 @@ export const Homenavbar = () => {
           >
             Start for free
           </button>
-          <div style={{ width: "50px", display: "flex", marginRight: "0px",marginLeft:"50px" }}>
-            <Avatar bg="black" size="xs" mt="2" />
-            <p style={{ marginLeft: "2px", marginTop: "8px" }}>Login</p>
+          <div  style={{ width: "50px", display: "flex", marginRight: "0px",marginLeft:"50px" }}>
+            <Link to={'/login'}><Avatar bg="black" size="xs" mt="2" />
+            <p style={{ marginLeft: "2px", marginTop: "8px" }}>Login</p></Link>
           </div>
           <div style={{ width: "50px", display: "flex",marginLeft:"40px" }}>
             <EditIcon mt="3" />

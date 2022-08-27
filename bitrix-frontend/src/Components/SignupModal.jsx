@@ -13,20 +13,53 @@ import {
   Input,
   Image,
   Box,
+  useToast,
 } from "@chakra-ui/react";
 import { useDisclosure } from "@chakra-ui/react";
 
 function SignupModal() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const toast = useToast();
 
   const initialRef = React.useRef(null);
   const finalRef = React.useRef(null);
 
-  const handleSignup = () => {
-    console.log(email, password);
-    onClose();
+  const handleSignup = async () => {
+    console.log(username, email, password);
+    var user = {
+      username,
+      email,
+      password,
+    };
+
+    await fetch("https://stormy-caverns-19491.herokuapp.com/signup", {
+      method: "POST",
+      body: JSON.stringify(user),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((r) => r.json())
+      .then((r) => {
+        console.log(r);
+        setUsername("");
+        setEmail("");
+        setPassword("");
+        toast({
+          title: "Account created.",
+          description: "We've created your account for you.",
+          status: "success",
+          duration: 9000,
+          isClosable: true,
+        });
+        onClose();
+      })
+      .catch((e) => {
+        console.log(e);
+      });
   };
 
   return (
@@ -51,6 +84,15 @@ function SignupModal() {
           </ModalHeader>
           <ModalCloseButton />
           <ModalBody pb={6}>
+            <FormControl>
+              <FormLabel>Username</FormLabel>
+              <Input
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                ref={initialRef}
+                placeholder="enter username"
+              />
+            </FormControl>
             <FormControl>
               <FormLabel>Email</FormLabel>
               <Input
