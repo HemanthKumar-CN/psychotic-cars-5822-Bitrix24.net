@@ -8,7 +8,7 @@
   font-size: 15px;
   font-family: "OpenSans-Semibold", "Helvetica Neue", Arial, Helvetica,
     sans-serif;
-  font-weight: 530;
+  font-weight: 700;
   display: flex;
   /* border: 1px solid red; */
 }
@@ -19,22 +19,29 @@
   padding: 15px;
   margin-bottom: 10px;
 }
-.ads {
-  width: 100%;
-  height: 450px;
-  /* border: 1px solid red; */
-  margin-top: 20px;
+.inviteDiv {
+  width: 400px;
   display: flex;
+  gap: 10px;
+  margin-right: 400px;
 }
-.ads2 {
-  height: max-content;
-  width: max-content;
-  margin: 50px 100px 100px 130px;
-  border-radius: 10px;
+.userDetail {
+  border: 1px solid white;
+  margin-top: 10px;
+  height: 450px;
+  background-color: rgb(250, 252, 254);
 }
-.ads3 {
+.employeeDiv {
   /* border: 1px solid red; */
-  height: max-content;
-  width: 300px;
-  margin: 5px 100px 100px -102px;
+  height: 400px;
+  width: 700px;
+  margin: auto;
+  margin-top: 10px;
+}
+.employeeDiv2 {
+  height: 50%;
+  width: 100%;
+  /* border: 1px solid red; */
+  display: flex;
+  gap:10px;
 }

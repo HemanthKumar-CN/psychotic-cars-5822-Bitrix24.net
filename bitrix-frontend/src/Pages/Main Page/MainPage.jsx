@@ -32,8 +32,11 @@ import { IoMdSettings } from "react-icons/io";
 
 import { ChevronDownIcon, SmallCloseIcon, SearchIcon } from "@chakra-ui/icons";
 import { Tasktable } from "../../Components/Tasktable";
+import { Company } from "../Company/Company";
 
 export const MainPage = () => {
+  const email = localStorage.getItem("email");
+
   return (
     <div className={classes.mainContainer}>
       <div className={classes.leftSlider}>
@@ -56,24 +59,31 @@ export const MainPage = () => {
               <Avatar size="sm" src="https://bit.ly/broken-link" />
             </div>
             <div>
-              <Select
-                style={{ border: "none", fontSize: "15px", outline: "none" }}
-                placeholder="krishankumarsafi7..."
-              ></Select>
+              <h2
+                style={{
+                  border: "none",
+                  fontSize: "15px",
+                  outline: "none",
+                  paddingTop: "10px",
+                  fontWeight: "bold",
+                }}
+              >
+                {email}... <ChevronDownIcon w={5} h={5} mt="3px" ml="2px" />
+              </h2>
             </div>
           </div>
           <div className={classes.upgrade_button}>
             <Button
+              colorScheme="yellow"
               style={{
                 width: "130px",
                 margin: "auto",
-                backgroundColor: "rgb(235,165,28)",
+                // backgroundColor: "rgb(235,165,28)",
                 color: "white",
                 fontWeight: "bold",
                 borderRadius: "15px",
                 height: "35px",
               }}
-              // colorScheme="yellow"
               size="md"
               rightIcon={<ChevronDownIcon />}
             >
@@ -85,12 +95,13 @@ export const MainPage = () => {
               style={{
                 width: "100px",
                 margin: "auto",
-                backgroundColor: "rgb(20,191,213)",
+                // backgroundColor: "rgb(20,191,213)",
                 color: "white",
                 fontWeight: "bold",
                 borderRadius: "15px",
                 height: "35px",
               }}
+              colorScheme="twitter"
               rightIcon={<ChevronDownIcon />}
             >
               {" "}
@@ -98,8 +109,7 @@ export const MainPage = () => {
             </Button>
           </div>
         </div>
-        {/* <SitesStore /> */}
-        
+
         <div className={classes.navbar1}>
           <div
             style={{
