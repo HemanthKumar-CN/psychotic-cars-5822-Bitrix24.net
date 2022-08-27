@@ -20,12 +20,8 @@ export const Tasktable = () => {
         <Table variant="simple" colorScheme="blackAlpha">
           <Thead>
             <Tr>
-              <Th>
-                <div style={{ display: "flex", gap: "5px" }}>
-                  <IconButton icon={<EditIcon />} size="xs" />
-                  <IconButton icon={<DeleteIcon />} size="xs" />
-                  <h2 style={{ paddingTop: "6px" }}>Name</h2>
-                </div>
+              <Th pl="70px">
+                Name
               </Th>
               <Th>Active</Th>
               <Th> Deadline</Th>
@@ -40,7 +36,7 @@ export const Tasktable = () => {
                 <div style={{ display: "flex", gap: "5px" }}>
                   <IconButton icon={<EditIcon />} size="xs" />
                   <IconButton icon={<DeleteIcon />} size="xs" />
-                  Go to the store
+                  Task1
                 </div>
               </Td>
               <Td> August 26, 12:28 am</Td>

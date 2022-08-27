@@ -12,15 +12,20 @@ import { ImDropbox } from "react-icons/im";
 import { IoIosArrowDropdownCircle, IoMdSettings } from "react-icons/io";
 import { BiSitemap } from "react-icons/bi";
 
-import { VStack } from "@chakra-ui/react";
+import { useDisclosure, VStack } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
+import { Tooltip } from "@chakra-ui/react";
+import { SliderNavbar } from "./SliderNavbar";
 
 export const LeftSlider = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure()
   return (
     <>
       <div
-        style={{ marginTop: "10px", marginBottom: "10px", marginLeft: "14px" }}
+        style={{  width:"40%", margin:"auto",marginTop: "10px", marginBottom: "10px",cursor:"pointer" }}
       >
-        <FiAlignJustify size="20px" />
+        <FiAlignJustify size="20px" onClick={onOpen}/>
+        <SliderNavbar onClose={onClose} isOpen={isOpen}/>
       </div>
       <hr style={{ width: "10px", margin: "auto" }} />
       <div
@@ -32,9 +37,13 @@ export const LeftSlider = () => {
       >
         <VStack spacing="20px">
           <GiTeamIdea size="20px" />
-          <AiOutlineFileProtect size="20px" />
+          <Link to="/stream">
+            <AiOutlineFileProtect size="20px" />
+          </Link>
           <AiFillFunnelPlot size="20px" />
-          <GiArcheryTarget size="20px" />
+          <Link to="/marketing">
+            <GiArcheryTarget size="20px" />
+          </Link>
           <BsFillCartFill size="20px" />
           <MdContacts size="20px" />
           <MdAndroid size="20px" />
