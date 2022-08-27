@@ -20,6 +20,7 @@ import {
   Text,
   Center,
   Box,
+  color,
 } from "@chakra-ui/react";
 import { useDisclosure } from "@chakra-ui/react";
 
@@ -47,10 +48,11 @@ export default function SplitScreen() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Must add Username af but for reqirs only email and pass
+    
     if (username && email && password) {
       dispatch(login({ username, email, password })).then((r) => {
         console.log(r.payload.token);
+        localStorage.setItem("token", r.token)
         if (r.type === "USER_LOGIN_SUCCESS") {
           navigate(comingFrom, { replace: true });
         }
@@ -123,10 +125,8 @@ export default function SplitScreen() {
         <Stack
           w={"full"}
           maxW={"xl"}
-          //   border={"1px solid red"}
           direction={"column"}
         >
-          {/* <Text>Log in with</Text> */}
           <Stack
             w={"full"}
             maxW={"xl"}
@@ -135,70 +135,41 @@ export default function SplitScreen() {
             borderRadius="10px"
             backgroundColor={"#f4f7f8"}
             justifyContent={"space-between"}
-            height="150px"
+            height="120px"
             p={6}
           >
-            <Stack direction="column" backgroundColor={"#f4f7f8"}>
-              <Flex w="350px" mb="15px" justifyContent={"space-around"}>
-                <Box mr={"15px"}>
-                  <a href="https://www.facebook.com">
-                    <FaFacebook id={styles.ficon} />
-                  </a>
-                </Box>
-                <Box mr={"15px"}>
-                  <Button
-                    // w={"full"}
-                    // maxW={"md"}
-                    variant={"outline"}
-                    leftIcon={<FcGoogle />}
-                  >
-                    <Center>
-                      <Text>Google</Text>
-                    </Center>
-                  </Button>
-                </Box>
-                <Box mr={"15px"}>
-                  <a href="https://apps.apple.com">
-                    <FaApple id={styles.apcon} />
-                  </a>
-                </Box>
-                <Box mr={"15px"}>
-                  <a href="https://in.pinterest.com">
-                    <FaPinterest id={styles.ticon} />
-                  </a>
-                </Box>
-              </Flex>
-              <Flex directio="row" justifyContent={"center"}>
-                <Box>
-                  <a href="https://www.twitter.com">
-                    <FaTwitterSquare id={styles.ticon} />
-                  </a>
-                </Box>
-                <Box>
+            <Button
+              w={"300px"}              
+              variant={"outline"}
+              leftIcon={<FcGoogle />}
+            >
+              <Center>
+                <Text>Sign in with Google</Text>
+              </Center>
+            </Button>
+            <Divider orientation="vertical" />
+            <Stack>
+              <Flex direction={"column"}>
+                <Box justifyContent={"center"}>
                   <a href="">
-                    <Image
-                      id={styles.ticon}
-                      alt={"Login Image"}
-                      objectFit={"cover"}
-                      src={zoom}
+                    <MdQrCodeScanner
+                      style={{
+                        height: "50px",
+                        width: "50px",
+                        color: "#848b93",
+                      }}
                     />
                   </a>
                 </Box>
-              </Flex>
-            </Stack>
-            <Divider orientation="vertical" />
-            <Stack>
-              <Flex justifyContent={"center"}>
-                <Box justifyContent={"center"}>
-                  <a href="https://apps.apple.com">
-                    <MdQrCodeScanner id={styles.qrcode} />
-                  </a>
-                </Box>
-                <Text fontSize={"13px"} fontWeight="semibold">
-                  Log in with QR
+                <Text ml="-5px" fontSize={"13px"} fontWeight="semibold">
+                  Log in with
                 </Text>
-                <Text fontSize={"13px"} fontWeight="semibold">
-                  code
+                <Text
+                  justifyContent={"center"}
+                  fontSize={"13px"}
+                  fontWeight="semibold"
+                >
+                  QR code
                 </Text>
               </Flex>
             </Stack>
