@@ -7,7 +7,6 @@ const TasksSchema = new mongoose.Schema({
   creator: String,
   assigned: Array,
   tag: String,
-  employees: Array,
   highPriority: Boolean,
   project: String,
   deadline: String,
