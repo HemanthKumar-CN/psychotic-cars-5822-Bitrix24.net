@@ -5,7 +5,7 @@ import axios from "axios";
 const addTask = (payload) => (dispatch) => {
   dispatch({ type: types.ADD_TASK_REQUEST });
   return axios
-    .post("url", payload)
+    .post(" http://localhost:8080/tasks", payload)
     .then((r) => {
       console.log(r.data)
       dispatch({ type: types.ADD_TASK_SUCCESS, payload: r.data });

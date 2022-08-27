@@ -1,8 +1,13 @@
 import React from "react";
 import classes from "./MainPage.module.css";
 import { RightSlider } from "../../Components/Right Slider/RightSlider";
+import { SitesStore } from "../Sites and Store/SitesStore";
 import { SearchBar } from "../../Components/SearchBar";
 import { RealTime } from "../../Components/RealTime";
+
+import { LeftSlider } from "../../Components/LeftSlider";
+import { MdBuild } from "react-icons/md";
+
 import {
   Avatar,
   HStack,
@@ -20,14 +25,13 @@ import {
   Box,
   Divider,
 } from "@chakra-ui/react";
-import { LeftSlider } from "../../Components/LeftSlider";
+
 import { AiOutlineRight, AiOutlineStar } from "react-icons/ai";
 import { MdFlashOn } from "react-icons/md";
 import { IoMdSettings } from "react-icons/io";
 
 import { ChevronDownIcon, SmallCloseIcon, SearchIcon } from "@chakra-ui/icons";
 import { Tasktable } from "../../Components/Tasktable";
-
 
 export const MainPage = () => {
   return (
@@ -58,8 +62,44 @@ export const MainPage = () => {
               ></Select>
             </div>
           </div>
+          <div className={classes.upgrade_button}>
+            <Button
+              style={{
+                width: "130px",
+                margin: "auto",
+                backgroundColor: "rgb(235,165,28)",
+                color: "white",
+                fontWeight: "bold",
+                borderRadius: "15px",
+                height: "35px",
+              }}
+              // colorScheme="yellow"
+              size="md"
+              rightIcon={<ChevronDownIcon />}
+            >
+              Upgrade
+            </Button>
+          </div>
+          <div className={classes.upgrade_button}>
+            <Button
+              style={{
+                width: "100px",
+                margin: "auto",
+                backgroundColor: "rgb(20,191,213)",
+                color: "white",
+                fontWeight: "bold",
+                borderRadius: "15px",
+                height: "35px",
+              }}
+              rightIcon={<ChevronDownIcon />}
+            >
+              {" "}
+              Invite
+            </Button>
+          </div>
         </div>
-
+        {/* <SitesStore /> */}
+        
         <div className={classes.navbar1}>
           <div
             style={{

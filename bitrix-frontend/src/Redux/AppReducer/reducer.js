@@ -18,7 +18,7 @@ const reducer = (state = initialState, action) => {
       case types.ADD_TASK_SUCCESS:
       return {
         ...state,
-        tasks: payload,
+        tasks: [...state.tasks, payload],
         isLoading: false,
         isError: false,
       };

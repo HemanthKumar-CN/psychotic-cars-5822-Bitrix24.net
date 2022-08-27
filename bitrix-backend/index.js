@@ -1,33 +1,32 @@
 const express = require("express");
 const app = express();
-require('dotenv').config();
-const cors = require("cors")
+require("dotenv").config();
+const cors = require("cors");
 
 const { connection } = require("./config/config");
 const TasksModel = require("./models/Tasks.model");
 const userRouter = require("./controller/user");
-const passport = require("./config/googleOauth")
+const passport = require("./config/googleOauth");
+const authentication = require("./middleware/authentication");
 
 app.use(express.json());
-app.use(cors())
+app.use(cors());
 
 app.get("/", (req, res) => {
   res.send("HomePage");
 });
 
-app.use("/", userRouter)
+app.use("/", userRouter);
 
-app.get("/tasks", async (req, res) => {
-  // const { userID } = req.body;
+app.get("/tasks", authentication, async (req, res) => {
+  const { userID } = req.body;
 
-  const userID = "63067449c85c097403975c1a";
-
-  const tasks = await TasksModel.find({ _id: userID });
+  const tasks = await TasksModel.find({ userID });
 
   res.send(tasks);
 });
 
-app.post("/tasks", async (req, res) => {
+app.post("/tasks", authentication, async (req, res) => {
   let {
     title,
     description,
@@ -35,7 +34,6 @@ app.post("/tasks", async (req, res) => {
     creator,
     assigned,
     tag,
-    employees,
     highPriority,
     project,
     deadline,
@@ -49,7 +47,6 @@ app.post("/tasks", async (req, res) => {
     creator,
     assigned,
     tag,
-    employees,
     highPriority,
     project,
     deadline,
@@ -60,11 +57,12 @@ app.post("/tasks", async (req, res) => {
   return res.send({ message: "task created", task });
 });
 
-app.patch("/:taskId/edit", async (req, res) => {
+app.patch("/:taskId/edit", authentication, async (req, res) => {
   const { taskId } = req.params;
   const { userID } = req.body;
 
   const task = await TasksModel.findOne({ _id: taskId });
+  // console.log(task);
 
   if (task.userID == userID) {
     const updated_Note = await TasksModel.findOneAndUpdate(
@@ -79,7 +77,7 @@ app.patch("/:taskId/edit", async (req, res) => {
   }
 });
 
-app.delete("/:taskId/delete", async (req, res) => {
+app.delete("/:taskId/delete", authentication, async (req, res) => {
   const { taskId } = req.params;
   const { userID } = req.body;
 
@@ -94,17 +92,24 @@ app.delete("/:taskId/delete", async (req, res) => {
   }
 });
 
-app.get('/auth/google',
-  passport.authenticate('google', { scope: ['openid', 'profile', 'email'] }));
+app.get(
+  "/auth/google",
+  passport.authenticate("google", { scope: ["openid", "profile", "email"] }),
+);
 
-  app.get('/auth/google/callback', 
-  passport.authenticate('google', { failureRedirect: '/login', session:false}),
-  function(req, res) {
+app.get(
+  "/auth/google/callback",
+  passport.authenticate("google", {
+    failureRedirect: "/login",
+    session: false,
+  }),
+  function (req, res) {
     // Successful authentication, redirect home.
     // console.log(req.user)
     // res.redirect('/');
-    res.send({"message": "Login Successful", "user":req.user})
-  });
+    res.send({ message: "Login Successful", user: req.user });
+  },
+);
 
 app.listen(process.env.PORT, async () => {
   try {
