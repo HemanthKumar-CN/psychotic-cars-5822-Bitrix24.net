@@ -43,17 +43,21 @@ export default function UserLogin() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
-  const comingFrom = location.state?.from?.pathname || "/";
+  const comingFrom = location.state?.from?.pathname || "/stream";
+
+  // const handleSignIn = async () => {
+  //   navigate("https://stormy-caverns-19491.herokuapp.com/auth/google");
+
+  // };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    
-    if (username && email && password) {
-      dispatch(login({ username, email, password })).then((r) => {
-        console.log(r.payload.token);
-        localStorage.setItem("token", r.token)
-        if (r.type === "USER_LOGIN_SUCCESS") {
+    if (email && password) {
+      dispatch(login({ email, password })).then((r) => {
+        console.log(r)
+        
+        if (r === "LOGIN_SUCCESS") {
+          localStorage.setItem("email", JSON.stringify(email));
           navigate(comingFrom, { replace: true });
         }
       });
@@ -83,11 +87,7 @@ export default function UserLogin() {
           <Heading fontSize={"4xl"} textAlign={"left"} fontWeight={"normal"}>
             Bitrix24 Login
           </Heading>
-          <Divider />
-          <FormControl id="name">
-            <FormLabel>Name</FormLabel>
-            <Input type="name" onChange={(e) => setUsername(e.target.value)} />
-          </FormControl>
+          <Divider />          
           <FormControl id="email">
             <FormLabel>Email address</FormLabel>
             <Input type="email" onChange={(e) => setEmail(e.target.value)} />
@@ -122,11 +122,7 @@ export default function UserLogin() {
         </Stack>
         <Divider m="10px" />
 
-        <Stack
-          w={"full"}
-          maxW={"xl"}
-          direction={"column"}
-        >
+        <Stack w={"full"} maxW={"xl"} direction={"column"}>
           <Stack
             w={"full"}
             maxW={"xl"}
@@ -139,13 +135,16 @@ export default function UserLogin() {
             p={6}
           >
             <Button
-              w={"300px"}              
+              w={"300px"}
               variant={"outline"}
               leftIcon={<FcGoogle />}
+              // onClick={handleSignIn}
             >
-              <Center>
-                <Text>Sign in with Google</Text>
-              </Center>
+              {/* <Center> */}
+              <a href="https://stormy-caverns-19491.herokuapp.com/auth/google">
+                Sign in with Google
+              </a>
+              {/* </Center> */}
             </Button>
             <Divider orientation="vertical" />
             <Stack>
