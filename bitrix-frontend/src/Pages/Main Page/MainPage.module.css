@@ -17,7 +17,7 @@
   width: 5%;
 }
 .middleContainer {
-  border: 0.1px solid white;
+  /* border: 1px solid white; */
   height: 200vh;
   width: 90%;
   position: st;
@@ -32,14 +32,33 @@
 .navbar {
   height: 65px;
   width: 100%;
-<<<<<<< HEAD
   /* border: 1px solid red; */
   border-bottom: 1px solid white;
   display: flex;
-=======
-  border: 1px solid red;
->>>>>>> ec9622956242eb4a1067eb1fe895c2c09a0010c8
+  /* border: 1px solid red; */
 }
+.navbar1{
+  width:100%;
+  height:55px;
+  background-color: #FFFF;
+  padding-left: 20px;
+  padding-top: 17px;
+  color:#545C6A;
+  font-size: 15px;
+  font-family: "OpenSans-Semibold","Helvetica Neue",Arial,Helvetica,sans-serif;
+  font-weight: 530;
+  display: flex;
+}
+.navbar2{
+   height:70px;
+   width:100%;
+   /* border: 1px solid red; */
+   padding: 15px;
+   margin-bottom: 10px;
+}
+
+
+
 .bitrixLogo {
   /* border: 1px solid red; */
   height: 40px;
@@ -88,3 +107,12 @@
 /* .navbar_email:hover{
   background-color: rgb(186, 179, 179);
 } */
+
+.tasks{
+  margin-top: 25px;
+  width:100%;
+  height:auto;
+  background-color: rgb(245,250,253);
+  color:#525C69
+
+}
