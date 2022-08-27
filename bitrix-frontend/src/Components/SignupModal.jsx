@@ -13,6 +13,7 @@ import {
   Input,
   Image,
   Box,
+  useToast,
 } from "@chakra-ui/react";
 import { useDisclosure } from "@chakra-ui/react";
 
@@ -20,13 +21,42 @@ function SignupModal() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const toast = useToast();
 
   const initialRef = React.useRef(null);
   const finalRef = React.useRef(null);
 
-  const handleSignup = () => {
+  const handleSignup = async () => {
     console.log(email, password);
-    onClose();
+    var user = {
+      email,
+      password,
+    };
+
+    await fetch("https://stormy-caverns-19491.herokuapp.com/signup", {
+      method: "POST",
+      body: JSON.stringify(user),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((r) => r.json())
+      .then((r) => {
+        console.log(r);
+        setEmail("");
+        setPassword("");
+        toast({
+          title: "Account created.",
+          description: "We've created your account for you.",
+          status: "success",
+          duration: 9000,
+          isClosable: true,
+        });
+        onClose();
+      })
+      .catch((e) => {
+        console.log(e);
+      });
   };
 
   return (
