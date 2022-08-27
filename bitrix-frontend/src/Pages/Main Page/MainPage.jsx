@@ -1,12 +1,14 @@
 import React from "react";
 import classes from "./MainPage.module.css";
 import { RightSlider } from "../../Components/Right Slider/RightSlider";
+
 import { SearchBar } from "../../Components/SearchBar";
 import { RealTime } from "../../Components/RealTime";
 import { Avatar, Button, Select, WrapItem } from "@chakra-ui/react";
 import { LeftSlider } from "../../Components/LeftSlider";
 import { MdBuild } from "react-icons/md";
 import { ChevronDownIcon } from "@chakra-ui/icons";
+
 export const MainPage = () => {
   return (
     <div className={classes.mainContainer}>
