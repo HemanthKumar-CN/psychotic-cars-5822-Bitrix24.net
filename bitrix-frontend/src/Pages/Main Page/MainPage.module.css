@@ -81,6 +81,9 @@
   font-weight: bold;
   font-size: 25px;
 }
+.hovering:hover{
+  background-color: rgb(89,108,141);
+}
 .navbar_search {
   /* border: 1px solid red; */
   margin-left: 100px;

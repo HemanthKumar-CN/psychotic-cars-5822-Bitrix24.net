@@ -162,7 +162,7 @@ export const MainPage = () => {
                 icon={<ChevronDownIcon />}
               />
             </ButtonGroup>
-            <InputGroup size="md" w="650px" h="40px">
+            <InputGroup size="md" w="650px" h="40px" >
               <InputLeftAddon
                 // pointerEvents="none"
                 // size="sm"

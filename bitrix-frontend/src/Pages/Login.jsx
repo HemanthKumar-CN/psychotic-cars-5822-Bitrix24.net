@@ -35,7 +35,7 @@ import { MdQrCodeScanner } from "react-icons/md";
 import styles from "./login.module.css";
 import SignupModal from "../Components/SignupModal";
 
-export default function SplitScreen() {
+export default function UserLogin() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
