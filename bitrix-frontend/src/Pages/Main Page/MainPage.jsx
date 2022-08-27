@@ -28,6 +28,7 @@ import { IoMdSettings } from "react-icons/io";
 import { ChevronDownIcon, SmallCloseIcon, SearchIcon } from "@chakra-ui/icons";
 import { Tasktable } from "../../Components/Tasktable";
 
+
 export const MainPage = () => {
   return (
     <div className={classes.mainContainer}>

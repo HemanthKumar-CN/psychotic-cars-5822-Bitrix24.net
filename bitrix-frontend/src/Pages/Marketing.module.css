@@ -1,0 +1,116 @@
+.mainContainer {
+    /* border: 3px solid red; */
+    height: auto;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    background-image: url(https://b24-chnk01.bitrix24.in/bitrix/templates/bitrix24/themes/light/atmosphere/atmosphere2.jpg);
+    position: fixed;
+  }
+  .leftSlider {
+    /* border: 1px solid red; */
+    color:rgba(255, 255, 255, 0.701);
+    justify-content: center;
+    text-align: center;
+    padding: 5px;
+    height: 100vh;
+    width: 5%;
+  }
+  .middleContainer {
+    border: 0.1px solid white;
+    height: 200vh;
+    width: 90%;
+    position: st;
+    scroll-behavior: smooth;
+  }
+  .rightSlider {
+    /* border: 1px solid red; */
+    height: 100vh;
+    width: 5%;
+  }
+  /* Navbar....... */
+  .navbar {
+    height: 65px;
+    width: 100%;
+  
+    /* border: 1px solid red; */
+    border-bottom: 1px solid white;
+    display: flex;
+  
+    /* border: 1px solid red; */
+  
+  }
+  .bitrixLogo {
+    /* border: 1px solid red; */
+    height: 40px;
+    width: 120px;
+    margin-top: 1%;
+    cursor: pointer;
+    margin-left: 20px;
+  }
+  .logoSpan {
+    color: #fff;
+    margin-right: 7px;
+    font-size: 24px;
+    letter-spacing: 1px;
+    font-weight: bold;
+  }
+  .logoSpan2 {
+    color: #2fc6f7;
+    font-weight: bold;
+    font-size: 25px;
+  }
+  .navbar_search {
+    /* border: 1px solid red; */
+    margin-left: 100px;
+    width: 250px;
+    height: 40px;
+    margin-top: 1.2%;
+  }
+  .real_time {
+    /* border: 1px solid red; */
+    width: 180px;
+    color: white;
+    font-size: 30px;
+    height: 100%;
+    padding-top: 8px;
+    margin-left: 20px;
+  }
+  .navbar_email {
+    /* border: 1px solid red; */
+    width: 250px;
+    padding-top: 14px;
+    height: 100%;
+    display: flex;
+    color: white;
+    gap: 10px;
+  }
+  /* .navbar_email:hover{
+    background-color: rgb(186, 179, 179);
+  } */
+
+  .anv_small_navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 90%;
+    margin: auto;
+    font-weight: 600;
+    color: rgb(81, 80, 80);
+    padding: 1.5%;
+    background-color: white;
+    margin-top: 1%;
+  }
+  
+  .anv_create_campaign{
+    color: white;
+    width: 90%;
+    margin: auto;
+    margin-top: 2.5%;
+  }
+  .anv_campaign_images{
+    display: flex;
+    flex-direction: row;
+    gap: 1%;
+    margin-top: 1%;
+  }
