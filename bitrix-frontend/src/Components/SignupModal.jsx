@@ -19,6 +19,7 @@ import { useDisclosure } from "@chakra-ui/react";
 
 function SignupModal() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const toast = useToast();
@@ -27,8 +28,9 @@ function SignupModal() {
   const finalRef = React.useRef(null);
 
   const handleSignup = async () => {
-    console.log(email, password);
+    console.log(username, email, password);
     var user = {
+      username,
       email,
       password,
     };
@@ -43,6 +45,7 @@ function SignupModal() {
       .then((r) => r.json())
       .then((r) => {
         console.log(r);
+        setUsername("");
         setEmail("");
         setPassword("");
         toast({
@@ -81,6 +84,15 @@ function SignupModal() {
           </ModalHeader>
           <ModalCloseButton />
           <ModalBody pb={6}>
+            <FormControl>
+              <FormLabel>Username</FormLabel>
+              <Input
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                ref={initialRef}
+                placeholder="enter username"
+              />
+            </FormControl>
             <FormControl>
               <FormLabel>Email</FormLabel>
               <Input
