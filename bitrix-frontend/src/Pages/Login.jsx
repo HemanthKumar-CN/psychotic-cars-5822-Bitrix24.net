@@ -21,15 +21,18 @@ import {
   Center,
   Box,
 } from "@chakra-ui/react";
+import { useDisclosure } from "@chakra-ui/react";
+
 import {
   FaApple,
-  FaTwitterSquare,  
+  FaTwitterSquare,
   FaPinterest,
   FaFacebook,
 } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { MdQrCodeScanner } from "react-icons/md";
 import styles from "./login.module.css";
+import SignupModal from "../Components/SignupModal";
 
 export default function SplitScreen() {
   const [username, setUsername] = useState("");
@@ -38,18 +41,18 @@ export default function SplitScreen() {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const location = useLocation()
-  const comingFrom = location.state?.from?.pathname || '/'
+  const location = useLocation();
+  const comingFrom = location.state?.from?.pathname || "/";
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     // Must add Username af but for reqirs only email and pass
     if (username && email && password) {
-      dispatch(login({username, email, password })).then((r) => {
+      dispatch(login({ username, email, password })).then((r) => {
         console.log(r.payload.token);
         if (r.type === "USER_LOGIN_SUCCESS") {
-          navigate(comingFrom, { replace: true});
+          navigate(comingFrom, { replace: true });
         }
       });
     }
@@ -89,7 +92,10 @@ export default function SplitScreen() {
           </FormControl>
           <FormControl id="password">
             <FormLabel>Password</FormLabel>
-            <Input type="password" onChange={(e) => setPassword(e.target.value)} />
+            <Input
+              type="password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
           </FormControl>
           <Stack spacing={6}>
             <Stack
@@ -107,6 +113,9 @@ export default function SplitScreen() {
             >
               Sign in
             </Button>
+            <Text align={"center"}>Don't have an account..? </Text>
+
+            <SignupModal />
           </Stack>
         </Stack>
         <Divider m="10px" />
@@ -117,7 +126,7 @@ export default function SplitScreen() {
           //   border={"1px solid red"}
           direction={"column"}
         >
-          <Text>Log in with</Text>
+          {/* <Text>Log in with</Text> */}
           <Stack
             w={"full"}
             maxW={"xl"}
@@ -195,7 +204,7 @@ export default function SplitScreen() {
             </Stack>
           </Stack>
         </Stack>
-      </Flex>      
+      </Flex>
     </Stack>
   );
 }
