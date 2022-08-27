@@ -43,19 +43,20 @@ export default function UserLogin() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
-  const comingFrom = location.state?.from?.pathname || "/";
+  const comingFrom = location.state?.from?.pathname || "/stream";
 
-  // const handleSignIn = () => {
+  // const handleSignIn = async () => {
   //   navigate("https://stormy-caverns-19491.herokuapp.com/auth/google");
+
   // };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (username && email && password) {
-      dispatch(login({ username, email, password })).then((r) => {
-        console.log(r.payload.token);
-        localStorage.setItem("token", r.token);
-        if (r.type === "USER_LOGIN_SUCCESS") {
+    if (email && password) {
+      dispatch(login({ email, password })).then((r) => {
+        console.log(r)
+        // localStorage.setItem("token", r.token);
+        if (r.type === "LOGIN_SUCCESS") {
           navigate(comingFrom, { replace: true });
         }
       });
@@ -143,7 +144,9 @@ export default function UserLogin() {
               // onClick={handleSignIn}
             >
               {/* <Center> */}
-              <a href="https://stormy-caverns-19491.herokuapp.com/auth/google">Sign in with Google</a>
+              <a href="https://stormy-caverns-19491.herokuapp.com/auth/google">
+                Sign in with Google
+              </a>
               {/* </Center> */}
             </Button>
             <Divider orientation="vertical" />

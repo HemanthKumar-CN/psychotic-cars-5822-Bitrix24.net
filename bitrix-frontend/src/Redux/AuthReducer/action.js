@@ -7,10 +7,15 @@ const login = (payload) => (dispatch) => {
   dispatch({ type: types.LOGIN_REQUEST });
   return axios({
     method: "post",
-    url: "https://stormy-caverns-19491.herokuapp.com/login",   
+    url: "https://stormy-caverns-19491.herokuapp.com/login",
     data: payload,
   })
-    .then((r) => dispatch({ type: types.LOGIN_SUCCESS, payload: r.data }))
+    .then((r) => {
+      console.log(r);
+      localStorage.setItem("token", r.token);
+      dispatch({ type: types.LOGIN_SUCCESS, payload: r.data.token });
+      return types.LOGIN_SUCCESS
+    })
     .catch((e) => dispatch({ type: types.LOGIN_FAILURE }));
 };
 
@@ -26,7 +31,7 @@ const login = (payload) => (dispatch) => {
 //     .then((r) => r.json())
 //     .then((r) => {
 //       // console.log(r)
-//       dispatch({ type: types.LOGIN_SUCCESS, payload: r.data })      
+//       dispatch({ type: types.LOGIN_SUCCESS, payload: r.data })
 //     })
 //     .catch((e) => {
 //       // console.log(e);
@@ -34,9 +39,4 @@ const login = (payload) => (dispatch) => {
 //     });
 // };
 
-
-
-
-export {
-  login
-};
+export { login };
