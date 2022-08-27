@@ -25,10 +25,12 @@ import {
 import styles from "./Tags.module.css"
 import { addTask } from "../../Redux/AppReducer/action";
 import { ADD_TASK_SUCCESS } from "../../Redux/AppReducer/actionTypes";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { Navigate } from "react-router-dom";
 
 function AddTask() {
-  const { isOpen, onOpen, onClose } = useDisclosure();  
+  const { isOpen, onOpen, onClose } = useDisclosure(); 
+  const isAuth = useSelector((state) => state.AuthReducer.data.isAuth);  
   const dispatch = useDispatch()
 
   const [title, setTitle] = useState("");
@@ -65,11 +67,14 @@ const handleKeyDown = (e) => {
         const value = e.target.value;
     // if(value.trim()) return
     setAssigned([...assigned, value])
-    e.target.value = ''
-    
-    
+    e.target.value = '' 
     
 }
+
+if(!isAuth) {
+  return <Navigate to='/login' />
+  
+} 
 
 
 
