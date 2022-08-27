@@ -42,11 +42,11 @@ function AddTask() {
   const [project, setProject] = useState("")
   const [time, setTime] = useState("");
   const [tag, setTag] = useState("")
-
+  const token=localStorage.getItem("token");
   const addTaskHandler = () => {
     let payload = {title,description,time,creator,assigned,tag,highPriority,project,deadline}
-    console.log(payload)
-    dispatch(addTask(payload)).then((r) => {
+    // console.log(payload)
+    dispatch(addTask(payload,token)).then((r) => {
       if(r === ADD_TASK_SUCCESS) {
         setTitle("")
         setDescription("")
@@ -71,10 +71,9 @@ const handleKeyDown = (e) => {
     
 }
 
-if(!isAuth) {
-  return <Navigate to='/login' />
-  
-} 
+// if(!isAuth) {
+//   return <Navigate to='/login' />  
+// } 
 
 
 
