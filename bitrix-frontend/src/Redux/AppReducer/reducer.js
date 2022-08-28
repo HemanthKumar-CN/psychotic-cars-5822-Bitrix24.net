@@ -15,38 +15,46 @@ const reducer = (state = initialState, action) => {
         isLoading: true,
         isError: false,
       };
-      case types.ADD_TASK_SUCCESS:
+    case types.ADD_TASK_SUCCESS:
       return {
         ...state,
         tasks: [...state.tasks, payload],
         isLoading: false,
         isError: false,
       };
-      case types.ADD_TASK_FAILURE:
+    case types.ADD_TASK_FAILURE:
       return {
         ...state,
         isLoading: false,
         isError: true,
       };
-      case types.GET_TASK_REQUEST:
+    case types.GET_TASK_REQUEST:
       return {
         ...state,
         isLoading: true,
         isError: false,
       };
-      case types.GET_TASK_SUCCESS:
+    case types.GET_TASK_SUCCESS:
       return {
         ...state,
         tasks: payload,
         isLoading: false,
         isError: false,
       };
-      case types.GET_TASK_FAILURE:
+    case types.GET_TASK_FAILURE:
       return {
         ...state,
         isLoading: false,
         isError: true,
-      };     
+      };
+    case types.Delete_TASK:
+      const afterDelete = state.tasks.filter((el) => {
+        return el._id != payload;
+      });
+      return {
+        ...state,
+        tasks: afterDelete,
+      };
 
     default:
       return state;

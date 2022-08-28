@@ -1,25 +1,25 @@
 import * as types from "./actionTypes";
 import axios from "axios";
 
-const addTask = (payload,token) => async(dispatch) => {
+const addTask = (new_task, token) => async (dispatch) => {
   dispatch({ type: types.ADD_TASK_REQUEST });
-  await fetch("https://stormy-caverns-19491.herokuapp.com/tasks", {
+  return await fetch("https://stormy-caverns-19491.herokuapp.com/tasks", {
     method: "POST",
-    mode:"no-cors",
-    body:payload,
+    body: JSON.stringify(new_task),
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
     },
   })
+    .then((r) => r.json())
     .then((r) => {
-      console.log(r);
+      // console.log("r", r);
       dispatch({ type: types.ADD_TASK_SUCCESS, payload: r.data });
       return types.ADD_TASK_SUCCESS;
     })
     .catch((e) => {
-      dispatch({ type: types.ADD_TASK_FAILURE, payload: e });
-      return types.ADD_TASK_FAILURE;
+      console.log("error", e);
+      dispatch({ type: types.ADD_TASK_FAILURE });
     });
 };
 
@@ -34,14 +34,31 @@ const getTask = (token) => async (dispatch) => {
   })
     .then((r) => r.json())
     .then((r) => {
-      console.log(r);
-      // dispatch({ type: types.GET_TASK_SUCCESS, payload: r.data });
-      // return types.GET_TASK_SUCCESS;
+      // console.log(r.data);
+      dispatch({ type: types.GET_TASK_SUCCESS, payload: r.data });
+      return types.GET_TASK_SUCCESS;
     })
     .catch((e) => {
       dispatch({ type: types.GET_TASK_FAILURE, payload: e });
-      return types.GET_TASK_FAILURE;
     });
 };
 
-export { addTask, getTask };
+const deleteTask = (id, token) => async (dispatch) => {
+  return await fetch(
+    `https://stormy-caverns-19491.herokuapp.com/${id}/delete`,
+    {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    },
+  )
+    .then((res) => res.json())
+    .then((res) => {
+      dispatch({ type: types.Delete_TASK, payload: id });
+      return types.Delete_TASK;
+    });
+};
+
+export { addTask, getTask, deleteTask };
