@@ -18,14 +18,20 @@ import { Tooltip } from "@chakra-ui/react";
 import { SliderNavbar } from "./SliderNavbar";
 
 export const LeftSlider = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure()
+  const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
       <div
-        style={{  width:"40%", margin:"auto",marginTop: "10px", marginBottom: "10px",cursor:"pointer" }}
+        style={{
+          width: "40%",
+          margin: "auto",
+          marginTop: "10px",
+          marginBottom: "10px",
+          cursor: "pointer",
+        }}
       >
-        <FiAlignJustify size="20px" onClick={onOpen}/>
-        <SliderNavbar onClose={onClose} isOpen={isOpen}/>
+        <FiAlignJustify size="20px" onClick={onOpen} />
+        <SliderNavbar onClose={onClose} isOpen={isOpen} />
       </div>
       <hr style={{ width: "10px", margin: "auto" }} />
       <div
@@ -44,8 +50,12 @@ export const LeftSlider = () => {
           <Link to="/marketing">
             <GiArcheryTarget size="20px" />
           </Link>
-          <BsFillCartFill size="20px" />
-          <MdContacts size="20px" />
+          <Link to="/sites">
+            <BsFillCartFill size="20px" />
+          </Link>
+          <Link to="/company">
+            <MdContacts size="20px" />
+          </Link>
           <MdAndroid size="20px" />
           <ImDropbox size="20px" />
           <IoIosArrowDropdownCircle size="20px" />

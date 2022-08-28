@@ -30,12 +30,16 @@ export const Homepage = () => {
         </h2>
         <Carousel />
       </div>
-      <img src="https://i.postimg.cc/DydryWv3/Bitrix-6.png" alt="" />
+      <img
+        src="https://i.postimg.cc/DydryWv3/Bitrix-6.png"
+        style={{ border: "1px  red", width: "100%" }}
+        alt=""
+      />
       <HomepageCard />
       <img
         src="https://i.postimg.cc/h4kv8LBx/Bitrix-7.png"
         alt=""
-        style={{ marginTop: "40px", marginBottom: "30px" }}
+        style={{ marginTop: "40px", marginBottom: "30px", width: "100%" }}
       />
       <hr />
       <img
@@ -43,33 +47,17 @@ export const Homepage = () => {
         alt=""
         style={{ marginTop: "30px", marginBottom: "40px" }}
       />
-      <h2
-        style={{
-          textAlign: "center",
-          marginTop: "10px",
-          color: "#262626",
-          fontSize: "40px",
-          fontWeight: "600",
-          marginBottom: "20px",
-        }}
-      >
-        Ready to try?
-      </h2>
-      <Button
-        colorScheme="whatsapp"
-        ml="500px"
-        w="130px"
-        height="40px"
-        mb="40px"
-      >
-        Register Free
-      </Button>
+
       <img
         src="https://i.postimg.cc/28mRfGNC/Bitrix-9.png"
         alt=""
-        style={{ marginTop: "35px" }}
+        style={{ marginTop: "35px", border: "1px  red", width: "100%" }}
       />
-      <img src="https://i.postimg.cc/J00XyJ90/Bitrix-10.png" alt="" />
+      <img
+        style={{ width: "100%" }}
+        src="https://i.postimg.cc/J00XyJ90/Bitrix-10.png"
+        alt=""
+      />
     </div>
   );
 };

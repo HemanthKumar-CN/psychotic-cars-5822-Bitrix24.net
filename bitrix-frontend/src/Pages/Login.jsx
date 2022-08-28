@@ -54,8 +54,8 @@ export default function UserLogin() {
     e.preventDefault();
     if (email && password) {
       dispatch(login({ email, password })).then((r) => {
-        console.log(r)
-        
+        console.log(r);
+
         if (r === "LOGIN_SUCCESS") {
           localStorage.setItem("email", JSON.stringify(email));
           navigate(comingFrom, { replace: true });
@@ -82,12 +82,12 @@ export default function UserLogin() {
           w={"full"}
           maxW={"md"}
           //   border={"1px solid red"}
-          mt="-20%"
+          mt={{ md: "-20%", base: "0%" }}
         >
           <Heading fontSize={"4xl"} textAlign={"left"} fontWeight={"normal"}>
             Bitrix24 Login
           </Heading>
-          <Divider />          
+          <Divider />
           <FormControl id="email">
             <FormLabel>Email address</FormLabel>
             <Input type="email" onChange={(e) => setEmail(e.target.value)} />
@@ -160,16 +160,12 @@ export default function UserLogin() {
                     />
                   </a>
                 </Box>
-                <Text ml="-5px" fontSize={"13px"} fontWeight="semibold">
-                  Log in with
-                </Text>
+                <Text ml="-5px" fontSize={"13px"} fontWeight="semibold"></Text>
                 <Text
                   justifyContent={"center"}
                   fontSize={"13px"}
                   fontWeight="semibold"
-                >
-                  QR code
-                </Text>
+                ></Text>
               </Flex>
             </Stack>
           </Stack>
