@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 require('dotenv').config();
 const cors = require("cors")
+const jwt = require("jsonwebtoken")
 
 const { connection } = require("./config/config");
 const TasksModel = require("./models/Tasks.model");
@@ -94,6 +95,8 @@ app.delete("/:taskId/delete", async (req, res) => {
   }
 });
 
+let userGoogleData ;
+
 app.get('/auth/google',
   passport.authenticate('google', { scope: ['openid', 'profile', 'email'] }));
 
@@ -101,10 +104,23 @@ app.get('/auth/google',
   passport.authenticate('google', { failureRedirect: '/login', session:false}),
   function(req, res) {
     // Successful authentication, redirect home.
+    userGoogleData = req.user
     // console.log(req.user)
-    // res.redirect('/');
-    res.send({"message": "Login Successful", "user":req.user})
+    // res.send({"message": "Login Successful", "user":req.user})
+    res.redirect('http://localhost:3000');
   });
+
+app.get("/googlelogin", (req, res) => {
+    const { emails, name } = userGoogleData;
+  const token = jwt.sign({ email: emails[0].value }, process.env.SECRET_KEY);
+  res.send({
+    email: emails[0].value,
+    username: name.givenName,
+    message: "Login Successfull",
+    token
+  });
+});
+
 
 app.listen(process.env.PORT, async () => {
   try {
