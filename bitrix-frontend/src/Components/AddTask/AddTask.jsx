@@ -173,7 +173,7 @@ const handleKeyDown = (e) => {
                   Cancel
                 </Button>
               <Button bgColor={"#bbed21"}  borderRadius="3px" onClick={() => {            
-              addTaskHandler()
+              addTaskHandler();
               onClose()              
             }}>
                 ADD TASK

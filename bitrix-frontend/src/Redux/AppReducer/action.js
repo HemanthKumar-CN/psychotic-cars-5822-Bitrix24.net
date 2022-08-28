@@ -14,8 +14,8 @@ const addTask = (payload,token) => async(dispatch) => {
   })
     .then((r) => {
       console.log(r);
-      dispatch({ type: types.ADD_TASK_SUCCESS, payload: r.data });
-      return types.ADD_TASK_SUCCESS;
+      // dispatch({ type: types.ADD_TASK_SUCCESS, payload: r.data });
+      // return types.ADD_TASK_SUCCESS;
     })
     .catch((e) => {
       dispatch({ type: types.ADD_TASK_FAILURE, payload: e });
@@ -23,8 +23,9 @@ const addTask = (payload,token) => async(dispatch) => {
     });
 };
 
-const getTask = (token) => async (dispatch) => {
+const getTask = (token) =>  async(dispatch) => {
   dispatch({ type: types.GET_TASK_REQUEST });
+  console.log(token);
   await fetch("https://stormy-caverns-19491.herokuapp.com/tasks", {
     method: "GET",
     headers: {
@@ -32,12 +33,12 @@ const getTask = (token) => async (dispatch) => {
       Authorization: `Bearer ${token}`,
     },
   })
-    .then((r) => r.json())
-    .then((r) => {
-      console.log(r);
+    .then((r) => {console.log(r)})
+    // .then((r) => {
+    //   console.log(r);
       // dispatch({ type: types.GET_TASK_SUCCESS, payload: r.data });
       // return types.GET_TASK_SUCCESS;
-    })
+    // })
     .catch((e) => {
       dispatch({ type: types.GET_TASK_FAILURE, payload: e });
       return types.GET_TASK_FAILURE;

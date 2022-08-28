@@ -19,10 +19,11 @@ export const Tasktable = () => {
   const tasks = useSelector((state) => state.AppReducer.tasks);
   const token= localStorage.getItem("token")
   const dispatch = useDispatch();
+  
   useEffect(() => {
     dispatch(getTask(token));
   }, []);
-  // console.log(tasks);
+  console.log(tasks);
   return (
     <div>
       <TableContainer>
