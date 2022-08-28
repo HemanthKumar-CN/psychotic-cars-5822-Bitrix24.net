@@ -31,10 +31,170 @@
   width: max-content;
   margin: 50px 100px 100px 130px;
   border-radius: 10px;
+  /* border: 1px solid red; */
 }
 .ads3 {
   /* border: 1px solid red; */
   height: max-content;
   width: 300px;
   margin: 5px 100px 100px -102px;
+}
+
+.mainContainer {
+  /* border: 3px solid red; */
+  height: auto;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  background-image: url(https://b24-chnk01.bitrix24.in/bitrix/templates/bitrix24/themes/light/atmosphere/atmosphere2.jpg);
+  position: fixed;
+}
+.leftSlider {
+  /* border: 1px solid red; */
+  color: rgba(255, 255, 255, 0.701);
+  justify-content: center;
+  text-align: center;
+  padding: 5px;
+  height: 100vh;
+  width: 5%;
+}
+.middleContainer {
+  height: 200vh;
+  width: 90%;
+  position: st;
+  scroll-behavior: smooth;
+}
+.rightSlider {
+  /* border: 1px solid red; */
+  height: 100vh;
+  width: 5%;
+}
+/* Navbar....... */
+.navbar {
+  height: 65px;
+  width: 100%;
+
+  /* border: 1px solid red; */
+  border-bottom: 1px solid white;
+  display: flex;
+
+  /* border: 1px solid red; */
+}
+.bitrixLogo {
+  /* border: 1px solid red; */
+  height: 40px;
+  width: 120px;
+  margin-top: 1%;
+  cursor: pointer;
+  margin-left: 20px;
+}
+.logoSpan {
+  color: #fff;
+  margin-right: 7px;
+  font-size: 24px;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+.logoSpan2 {
+  color: #2fc6f7;
+  font-weight: bold;
+  font-size: 25px;
+}
+.navbar_search {
+  /* border: 1px solid red; */
+  margin-left: 100px;
+  width: 250px;
+  height: 40px;
+  margin-top: 1.2%;
+}
+.real_time {
+  /* border: 1px solid red; */
+  width: 180px;
+  color: white;
+  font-size: 30px;
+  height: 100%;
+  padding-top: 8px;
+  margin-left: 20px;
+}
+.navbar_email {
+  /* border: 1px solid red; */
+  width: 250px;
+  padding-top: 14px;
+  height: 100%;
+  display: flex;
+  color: white;
+  gap: 10px;
+}
+.sites2 {
+  display: flex;
+  gap: 10px;
+  border-right: 2px solid black;
+  width: 80px;
+  height: 25px;
+}
+.outliner {
+  display: flex;
+  gap: 5px;
+  width: 16%;
+  font-size: 25px;
+  color: white;
+  font-weight: 200;
+}
+
+/* ...............Media queries(Medium Device)........................ */
+@media screen and (max-width: 1024px) {
+  .navbar1 {
+    padding-left: 2px;
+    padding-top: 15px;
+    font-size: 10px;
+    font-weight: bold;
+  }
+  .sites2 {
+    display: none;
+  }
+  .outliner {
+    display: none;
+  }
+  .ads2 {
+    margin: 50px 100px 100px 90px;
+    height: 200px;
+    width: 300px;
+    margin-top: 150px;
+  }
+  .ads3 {
+    /* border: 1px solid red; */
+    height: 200px;
+    width: 200px;
+    margin-top: 60px;
+  }
+}
+/* ....................Media queries (Small Devices)............... */
+
+@media screen and (max-width: 600px) {
+  .navbar1 {
+    padding-left: 2px;
+    padding-top: 15px;
+    font-size: 5px;
+    font-weight: bold;
+    border: 1px solid red;
+    width: 550px;
+  }
+  .sites2 {
+    display: none;
+  }
+  .outliner {
+    display: none;
+  }
+  .ads2 {
+    margin: 50px 100px 100px 90px;
+    height: 200px;
+    width: 300px;
+    margin-top: 150px;
+  }
+  .ads3 {
+    /* border: 1px solid red; */
+    height: 200px;
+    width: 200px;
+    margin-top: 60px;
+  }
 }

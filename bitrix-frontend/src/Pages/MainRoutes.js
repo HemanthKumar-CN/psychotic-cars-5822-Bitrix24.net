@@ -1,11 +1,12 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { Company } from "./Company/Company";
+// import { Company } from "./Company/Company";
 import { Homepage } from "./Homepage";
 import UserLogin from "./Login";
 import { MainPage } from "./Main Page/MainPage";
 import { Marketing } from "./Marketing";
 import { SitesStore } from "./Sites and Store/SitesStore";
+import { Company } from "./Company/Company";
 
 export const MainRoutes = () => {
   return (

@@ -56,6 +56,10 @@ export const LeftSlider = () => {
           <Link to="/company">
             <MdContacts size="20px" />
           </Link>
+
+          <BsFillCartFill size="20px" />
+
+          <MdContacts size="20px" />
           <MdAndroid size="20px" />
           <ImDropbox size="20px" />
           <IoIosArrowDropdownCircle size="20px" />
