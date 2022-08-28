@@ -31,10 +31,85 @@
   width: max-content;
   margin: 50px 100px 100px 130px;
   border-radius: 10px;
+  /* border: 1px solid red; */
 }
 .ads3 {
   /* border: 1px solid red; */
   height: max-content;
   width: 300px;
   margin: 5px 100px 100px -102px;
+}
+
+.sites2 {
+  display: flex;
+  gap: 10px;
+  border-right: 2px solid black;
+  width: 80px;
+  height: 25px;
+}
+.outliner {
+  display: flex;
+  gap: 5px;
+  width: 16%;
+  font-size: 25px;
+  color: white;
+  font-weight: 200;
+}
+
+/* ...............Media queries(Medium Device)........................ */
+@media screen and (max-width: 1024px) {
+  .navbar1 {
+    padding-left: 2px;
+    padding-top: 15px;
+    font-size: 10px;
+    font-weight: bold;
+  }
+  .sites2 {
+    display: none;
+  }
+  .outliner {
+    display: none;
+  }
+  .ads2 {
+    margin: 50px 100px 100px 90px;
+    height: 200px;
+    width: 300px;
+    margin-top: 150px;
+  }
+  .ads3 {
+    /* border: 1px solid red; */
+    height: 200px;
+    width: 200px;
+    margin-top: 60px;
+  }
+}
+/* ....................Media queries (Small Devices)............... */
+
+@media screen and (max-width: 600px) {
+  .navbar1 {
+    padding-left: 2px;
+    padding-top: 15px;
+    font-size: 5px;
+    font-weight: bold;
+    border: 1px solid red;
+    width: 550px;
+  }
+  .sites2 {
+    display: none;
+  }
+  .outliner {
+    display: none;
+  }
+  .ads2 {
+    margin: 50px 100px 100px 90px;
+    height: 200px;
+    width: 300px;
+    margin-top: 150px;
+  }
+  .ads3 {
+    /* border: 1px solid red; */
+    height: 200px;
+    width: 200px;
+    margin-top: 60px;
+  }
 }
