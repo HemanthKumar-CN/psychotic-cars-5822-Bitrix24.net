@@ -20,36 +20,45 @@ import {
   Text,
   Center,
   Box,
+  color,
 } from "@chakra-ui/react";
+import { useDisclosure } from "@chakra-ui/react";
+
 import {
   FaApple,
-  FaTwitterSquare,  
+  FaTwitterSquare,
   FaPinterest,
   FaFacebook,
 } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { MdQrCodeScanner } from "react-icons/md";
 import styles from "./login.module.css";
+import SignupModal from "../Components/SignupModal";
 
-export default function SplitScreen() {
+export default function UserLogin() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const location = useLocation()
-  const comingFrom = location.state?.from?.pathname || '/'
+  const location = useLocation();
+  const comingFrom = location.state?.from?.pathname || "/stream";
+
+  // const handleSignIn = async () => {
+  //   navigate("https://stormy-caverns-19491.herokuapp.com/auth/google");
+
+  // };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Must add Username af but for reqirs only email and pass
-    if (username && email && password) {
-      dispatch(login({username, email, password })).then((r) => {
-        console.log(r.payload.token);
-        if (r.type === "USER_LOGIN_SUCCESS") {
-          navigate(comingFrom, { replace: true});
+    if (email && password) {
+      dispatch(login({ email, password })).then((r) => {
+        console.log(r)
+        
+        if (r === "LOGIN_SUCCESS") {
+          localStorage.setItem("email", JSON.stringify(email));
+          navigate(comingFrom, { replace: true });
         }
       });
     }
@@ -78,18 +87,17 @@ export default function SplitScreen() {
           <Heading fontSize={"4xl"} textAlign={"left"} fontWeight={"normal"}>
             Bitrix24 Login
           </Heading>
-          <Divider />
-          <FormControl id="name">
-            <FormLabel>Name</FormLabel>
-            <Input type="name" onChange={(e) => setUsername(e.target.value)} />
-          </FormControl>
+          <Divider />          
           <FormControl id="email">
             <FormLabel>Email address</FormLabel>
             <Input type="email" onChange={(e) => setEmail(e.target.value)} />
           </FormControl>
           <FormControl id="password">
             <FormLabel>Password</FormLabel>
-            <Input type="password" onChange={(e) => setPassword(e.target.value)} />
+            <Input
+              type="password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
           </FormControl>
           <Stack spacing={6}>
             <Stack
@@ -107,17 +115,14 @@ export default function SplitScreen() {
             >
               Sign in
             </Button>
+            <Text align={"center"}>Don't have an account..? </Text>
+
+            <SignupModal />
           </Stack>
         </Stack>
         <Divider m="10px" />
 
-        <Stack
-          w={"full"}
-          maxW={"xl"}
-          //   border={"1px solid red"}
-          direction={"column"}
-        >
-          <Text>Log in with</Text>
+        <Stack w={"full"} maxW={"xl"} direction={"column"}>
           <Stack
             w={"full"}
             maxW={"xl"}
@@ -126,76 +131,50 @@ export default function SplitScreen() {
             borderRadius="10px"
             backgroundColor={"#f4f7f8"}
             justifyContent={"space-between"}
-            height="150px"
+            height="120px"
             p={6}
           >
-            <Stack direction="column" backgroundColor={"#f4f7f8"}>
-              <Flex w="350px" mb="15px" justifyContent={"space-around"}>
-                <Box mr={"15px"}>
-                  <a href="https://www.facebook.com">
-                    <FaFacebook id={styles.ficon} />
-                  </a>
-                </Box>
-                <Box mr={"15px"}>
-                  <Button
-                    // w={"full"}
-                    // maxW={"md"}
-                    variant={"outline"}
-                    leftIcon={<FcGoogle />}
-                  >
-                    <Center>
-                      <Text>Google</Text>
-                    </Center>
-                  </Button>
-                </Box>
-                <Box mr={"15px"}>
-                  <a href="https://apps.apple.com">
-                    <FaApple id={styles.apcon} />
-                  </a>
-                </Box>
-                <Box mr={"15px"}>
-                  <a href="https://in.pinterest.com">
-                    <FaPinterest id={styles.ticon} />
-                  </a>
-                </Box>
-              </Flex>
-              <Flex directio="row" justifyContent={"center"}>
-                <Box>
-                  <a href="https://www.twitter.com">
-                    <FaTwitterSquare id={styles.ticon} />
-                  </a>
-                </Box>
-                <Box>
+            <Button
+              w={"300px"}
+              variant={"outline"}
+              leftIcon={<FcGoogle />}
+              // onClick={handleSignIn}
+            >
+              {/* <Center> */}
+              <a href="https://stormy-caverns-19491.herokuapp.com/auth/google">
+                Sign in with Google
+              </a>
+              {/* </Center> */}
+            </Button>
+            <Divider orientation="vertical" />
+            <Stack>
+              <Flex direction={"column"}>
+                <Box justifyContent={"center"}>
                   <a href="">
-                    <Image
-                      id={styles.ticon}
-                      alt={"Login Image"}
-                      objectFit={"cover"}
-                      src={zoom}
+                    <MdQrCodeScanner
+                      style={{
+                        height: "50px",
+                        width: "50px",
+                        color: "#848b93",
+                      }}
                     />
                   </a>
                 </Box>
-              </Flex>
-            </Stack>
-            <Divider orientation="vertical" />
-            <Stack>
-              <Flex justifyContent={"center"}>
-                <Box justifyContent={"center"}>
-                  <a href="https://apps.apple.com">
-                    <MdQrCodeScanner id={styles.qrcode} />
-                  </a>
-                </Box>
-                <Text fontSize={"13px"} fontWeight="semibold">
-                  Log in with QR
+                <Text ml="-5px" fontSize={"13px"} fontWeight="semibold">
+                  Log in with
                 </Text>
-                <Text fontSize={"13px"} fontWeight="semibold">
-                  code
+                <Text
+                  justifyContent={"center"}
+                  fontSize={"13px"}
+                  fontWeight="semibold"
+                >
+                  QR code
                 </Text>
               </Flex>
             </Stack>
           </Stack>
         </Stack>
-      </Flex>      
+      </Flex>
     </Stack>
   );
 }

@@ -1,19 +1,14 @@
 import React from "react";
+import { MainRoutes } from "./Pages/MainRoutes";
+import { SitesStore } from "./Pages/Sites and Store/SitesStore";
 
-
-
-import { Homepage } from "./Pages/Homepage";
-import { MainPage } from "./Pages/Main Page/MainPage";
 
 
 function App() {
   return (
-    <div>
-      {/* <Homepage /> */}
-      <MainPage/>
-    </div>
+    <MainRoutes/>
+    // <SitesStore/>
   );
-
 }
 
 export default App;

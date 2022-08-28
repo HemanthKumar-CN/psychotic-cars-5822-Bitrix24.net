@@ -17,7 +17,6 @@
     width: 5%;
   }
   .middleContainer {
-    border: 0.1px solid white;
     height: 200vh;
     width: 90%;
     position: st;
@@ -93,7 +92,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    width: 90%;
+    width: 100%;
     margin: auto;
     font-weight: 600;
     color: rgb(81, 80, 80);
@@ -104,9 +103,10 @@
   
   .anv_create_campaign{
     color: white;
-    width: 90%;
+    width: 100%;
     margin: auto;
     margin-top: 2.5%;
+    margin-left: 10px;
   }
   .anv_campaign_images{
     display: flex;
