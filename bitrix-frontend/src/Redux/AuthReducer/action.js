@@ -12,7 +12,8 @@ const login = (payload) => (dispatch) => {
   })
     .then((r) => {
       console.log(r);
-      localStorage.setItem("token", r.token);
+      localStorage.setItem("token", r.data.token);
+      // localStorage.setItem("", r.data.token);
       dispatch({ type: types.LOGIN_SUCCESS, payload: r.data.token });
       return types.LOGIN_SUCCESS
     })

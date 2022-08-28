@@ -1,8 +1,14 @@
 import React from "react";
 import classes from "./MainPage.module.css";
 import { RightSlider } from "../../Components/Right Slider/RightSlider";
+import { SitesStore } from "../Sites and Store/SitesStore";
 import { SearchBar } from "../../Components/SearchBar";
 import { RealTime } from "../../Components/RealTime";
+import  AddTask  from '../../Components/AddTask/AddTask'
+
+import { LeftSlider } from "../../Components/LeftSlider";
+import { MdBuild } from "react-icons/md";
+
 import {
   Avatar,
   HStack,
@@ -20,16 +26,18 @@ import {
   Box,
   Divider,
 } from "@chakra-ui/react";
-import { LeftSlider } from "../../Components/LeftSlider";
+
 import { AiOutlineRight, AiOutlineStar } from "react-icons/ai";
 import { MdFlashOn } from "react-icons/md";
 import { IoMdSettings } from "react-icons/io";
 
 import { ChevronDownIcon, SmallCloseIcon, SearchIcon } from "@chakra-ui/icons";
 import { Tasktable } from "../../Components/Tasktable";
-
+import { Company } from "../Company/Company";
 
 export const MainPage = () => {
+  const email = localStorage.getItem("email");
+
   return (
     <div className={classes.mainContainer}>
       <div className={classes.leftSlider}>
@@ -52,11 +60,54 @@ export const MainPage = () => {
               <Avatar size="sm" src="https://bit.ly/broken-link" />
             </div>
             <div>
-              <Select
-                style={{ border: "none", fontSize: "15px", outline: "none" }}
-                placeholder="krishankumarsafi7..."
-              ></Select>
+              <h2
+                style={{
+                  border: "none",
+                  fontSize: "15px",
+                  outline: "none",
+                  paddingTop: "10px",
+                  fontWeight: "bold",
+                }}
+              >
+                {email}... <ChevronDownIcon w={5} h={5} mt="3px" ml="2px" />
+              </h2>
             </div>
+          </div>
+          <div className={classes.upgrade_button}>
+            <Button
+              colorScheme="yellow"
+              style={{
+                width: "130px",
+                margin: "auto",
+                // backgroundColor: "rgb(235,165,28)",
+                color: "white",
+                fontWeight: "bold",
+                borderRadius: "15px",
+                height: "35px",
+              }}
+              size="md"
+              rightIcon={<ChevronDownIcon />}
+            >
+              Upgrade
+            </Button>
+          </div>
+          <div className={classes.upgrade_button}>
+            <Button
+              style={{
+                width: "100px",
+                margin: "auto",
+                // backgroundColor: "rgb(20,191,213)",
+                color: "white",
+                fontWeight: "bold",
+                borderRadius: "15px",
+                height: "35px",
+              }}
+              colorScheme="twitter"
+              rightIcon={<ChevronDownIcon />}
+            >
+              {" "}
+              Invite
+            </Button>
           </div>
         </div>
 
@@ -106,8 +157,8 @@ export const MainPage = () => {
               backgroundColor="#BBED21"
               w="110px"
               h="40px"
-            >
-              <Button
+            ><AddTask />
+              {/* <Button
                 color={"#535C69"}
                 fontSize="12px"
                 fontWeight="700"
@@ -115,14 +166,14 @@ export const MainPage = () => {
                 h="40px"
               >
                 NEW TASK
-              </Button>
+              </Button> */}
               <IconButton
                 aria-label="Add to friends"
                 h="40px"
                 icon={<ChevronDownIcon />}
               />
             </ButtonGroup>
-            <InputGroup size="md" w="650px" h="40px">
+            <InputGroup size="md" w="650px" h="40px" >
               <InputLeftAddon
                 // pointerEvents="none"
                 // size="sm"

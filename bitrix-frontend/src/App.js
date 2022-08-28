@@ -1,16 +1,13 @@
 import React from "react";
+import { MainRoutes } from "./Pages/MainRoutes";
+import { SitesStore } from "./Pages/Sites and Store/SitesStore";
 
-import { Homepage } from "./Pages/Homepage";
-import SplitScreen from "./Pages/Login";
-import { MainPage } from "./Pages/Main Page/MainPage";
+
 
 function App() {
   return (
-    <div>
-      {/* <Homepage /> */}
-      <SplitScreen />
-      {/* <MainPage/> */}
-    </div>
+    <MainRoutes/>
+    // <SitesStore/>
   );
 }
 
