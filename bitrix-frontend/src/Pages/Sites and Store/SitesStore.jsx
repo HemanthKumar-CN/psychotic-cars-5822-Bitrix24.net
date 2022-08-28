@@ -29,17 +29,15 @@ export const SitesStore = () => {
   return (
     <div>
       <div className={classes.navbar1}>
-        <div
-          style={{
-            display: "flex",
-            gap: "10px",
-            borderRight: "2px solid black",
-            width: "80px",
-            height: "25px",
-          }}
-        >
-          <h2 style={{ color: "#1058d0" }}>Sites </h2>
-          <AiOutlineRight size="13px" style={{ marginTop: "5px" }} />
+        <div className={classes.sites2}>
+          <h2 className={classes.sites} style={{ color: "#1058d0" }}>
+            Sites{" "}
+          </h2>
+          <AiOutlineRight
+            className={classes.sites}
+            size="13px"
+            style={{ marginTop: "5px" }}
+          />
         </div>
         <div style={{ marginLeft: "20px" }}>
           <HStack spacing="35px">
@@ -68,11 +66,9 @@ export const SitesStore = () => {
         <ChevronDownIcon w={5} h={5} mt="3px" ml="2px" />
       </div>
       <div className={classes.navbar2}>
-        <HStack spacing="15px">
-          <div style={{ display: "flex", gap: "5px", width: "16%" }}>
-            <p style={{ fontSize: "25px", color: "white", fontWeight: "200" }}>
-              Sites
-            </p>
+        <HStack spacing="25px">
+          <div className={classes.outliner}>
+            <p>Sites</p>
             <AiOutlineStar
               color="grey"
               size="23px"
