@@ -55,6 +55,16 @@ const reducer = (state = initialState, action) => {
         ...state,
         tasks: afterDelete,
       };
+    case types.Edit_Task:
+      const index = state.tasks.findIndex((i) => i._id == payload._id);
+      console.log(index);
+      const edited = [...state.tasks];
+      edited.splice(index, 1, payload);
+      console.log(edited);
+      return {
+        ...state,
+        tasks: edited,
+      };
 
     default:
       return state;

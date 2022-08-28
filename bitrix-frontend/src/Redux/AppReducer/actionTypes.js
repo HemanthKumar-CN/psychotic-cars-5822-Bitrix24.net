@@ -8,3 +8,4 @@ export const GET_TASK_SUCCESS = "GET_TASK_SUCCESS";
 export const GET_TASK_FAILURE = "GET_TASK_FAILURE";
 
 export const Delete_TASK = "Delete_TASK";
+export const Edit_Task = "Edit_Task";

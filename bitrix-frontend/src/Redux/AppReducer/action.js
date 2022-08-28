@@ -61,4 +61,21 @@ const deleteTask = (id, token) => async (dispatch) => {
     });
 };
 
-export { addTask, getTask, deleteTask };
+const updateTask = (id, token, payload) => async (dispatch) => {
+  return await fetch(`https://stormy-caverns-19491.herokuapp.com/${id}/edit`, {
+    method: "PATCH",
+    body: JSON.stringify(payload),
+    headers: {
+      "content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  })
+    .then((res) => res.json())
+    .then((res) => {
+      console.log(res);
+      dispatch({ type: types.Edit_Task, payload: res.data });
+      return types.Edit_Task;
+    });
+};
+
+export { addTask, getTask, deleteTask, updateTask };

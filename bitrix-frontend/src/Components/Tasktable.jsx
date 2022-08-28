@@ -1,4 +1,4 @@
-import React, { useEffect,useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./AddTask/Tags.module.css";
 import {
   Table,
@@ -41,7 +41,12 @@ import { Navigate } from "react-router-dom";
 // import {  } from "react-redux";
 import { EditIcon, DeleteIcon } from "@chakra-ui/icons";
 import { FaUserCircle } from "react-icons/fa";
-import { deleteTask, getTask,addTask } from "../Redux/AppReducer/action";
+import {
+  deleteTask,
+  getTask,
+  addTask,
+  updateTask,
+} from "../Redux/AppReducer/action";
 
 export const Tasktable = () => {
   const tasks = useSelector((state) => state.AppReducer.tasks);
@@ -56,6 +61,7 @@ export const Tasktable = () => {
   const [project, setProject] = useState("");
   const [time, setTime] = useState("");
   const [tag, setTag] = useState("");
+  const [id, setId] = useState("");
   const token = localStorage.getItem("token");
 
   const dispatch = useDispatch();
@@ -63,9 +69,25 @@ export const Tasktable = () => {
     dispatch(getTask(token));
   }, []);
 
-  const addTaskHandler=(id)=>{
-    console.log(id);
-  }
+  const addTaskHandler = () => {
+    const updatedTask = {
+      title,
+      highPriority,
+      description,
+      creator,
+      assigned,
+      deadline,
+      project,
+      time,
+      tag,
+      id,
+    };
+
+    // console.log(updatedTask);
+
+    dispatch(updateTask(id, token, updatedTask));
+    onClose();
+  };
   const handleKeyDown = (e) => {
     // console.log(e.key)
     if (e.key !== "Enter") return;
@@ -93,7 +115,25 @@ export const Tasktable = () => {
   };
 
   const handleEdit = (id) => {
-    console.log("edit", id);
+    // console.log("edit", id);
+
+    const target = tasks.filter((el) => {
+      return el._id == id;
+    });
+
+    // console.log(target[0]);
+
+    onOpen();
+    setTitle(target[0].title);
+    sethighPriority(target[0].highPriority);
+    setDescription(target[0].description);
+    setCreator(target[0].creator);
+    setAssigned(target[0].assigned);
+    setDeadline(target[0].deadline);
+    setProject(target[0].project);
+    setTime(target[0].time);
+    setTag(target[0].tag);
+    setId(target[0]._id);
   };
 
   return (
@@ -242,7 +282,7 @@ export const Tasktable = () => {
                   addTaskHandler();
                 }}
               >
-                ADD TASK
+                Update Task
               </Button>
             </DrawerFooter>
           </DrawerContent>
@@ -268,12 +308,12 @@ export const Tasktable = () => {
                       <Td>
                         <div style={{ display: "flex", gap: "5px" }}>
                           <IconButton
-                            onClick={onOpen}
+                            onClick={() => handleEdit(e._id)}
                             icon={<EditIcon />}
                             size="xs"
                           />
                           <IconButton
-                             onClick={()=>handleDelete(e._id)}
+                            onClick={() => handleDelete(e._id)}
                             icon={<DeleteIcon />}
                             size="xs"
                           />
