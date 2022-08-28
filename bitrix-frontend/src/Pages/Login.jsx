@@ -82,7 +82,7 @@ export default function UserLogin() {
           w={"full"}
           maxW={"md"}
           //   border={"1px solid red"}
-          mt="-20%"
+          mt={{base:"0%", md:"-20%"}}
         >
           <Heading fontSize={"4xl"} textAlign={"left"} fontWeight={"normal"}>
             Bitrix24 Login
