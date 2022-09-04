@@ -21,6 +21,8 @@ All CRUD operations are taken care with ux and backend as well.
 - Home Page
 
 ![App Screenshot](https://i.ibb.co/Qcg4YgG/Screenshot-164.png)
+
+- Task Page
 ![Task Page](https://i.ibb.co/g3cdwbr/Screenshot-165.png)
 
 
