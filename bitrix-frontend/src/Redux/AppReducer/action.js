@@ -3,7 +3,7 @@ import axios from "axios";
 
 const addTask = (new_task, token) => async (dispatch) => {
   dispatch({ type: types.ADD_TASK_REQUEST });
-  return await fetch("https://stormy-caverns-19491.herokuapp.com/tasks", {
+  return await fetch("https://shielded-plains-50086.herokuapp.com/tasks", {
     method: "POST",
     body: JSON.stringify(new_task),
     headers: {
@@ -25,7 +25,7 @@ const addTask = (new_task, token) => async (dispatch) => {
 
 const getTask = (token) => async (dispatch) => {
   dispatch({ type: types.GET_TASK_REQUEST });
-  await fetch("https://stormy-caverns-19491.herokuapp.com/tasks", {
+  await fetch("https://shielded-plains-50086.herokuapp.com/tasks", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -45,7 +45,7 @@ const getTask = (token) => async (dispatch) => {
 
 const deleteTask = (id, token) => async (dispatch) => {
   return await fetch(
-    `https://stormy-caverns-19491.herokuapp.com/${id}/delete`,
+    `https://shielded-plains-50086.herokuapp.com/${id}/delete`,
     {
       method: "DELETE",
       headers: {
@@ -62,7 +62,7 @@ const deleteTask = (id, token) => async (dispatch) => {
 };
 
 const updateTask = (id, token, payload) => async (dispatch) => {
-  return await fetch(`https://stormy-caverns-19491.herokuapp.com/${id}/edit`, {
+  return await fetch(`https://shielded-plains-50086.herokuapp.com/${id}/edit`, {
     method: "PATCH",
     body: JSON.stringify(payload),
     headers: {

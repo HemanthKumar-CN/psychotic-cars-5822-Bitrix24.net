@@ -35,7 +35,7 @@ function SignupModal() {
       password,
     };
 
-    await fetch("https://stormy-caverns-19491.herokuapp.com/signup", {
+    await fetch("https://shielded-plains-50086.herokuapp.com/signup", {
       method: "POST",
       body: JSON.stringify(user),
       headers: {

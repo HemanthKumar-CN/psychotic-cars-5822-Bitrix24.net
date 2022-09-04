@@ -317,8 +317,8 @@ export const Tasktable = () => {
                             icon={<DeleteIcon />}
                             size="xs"
                           />
+                          {e.title}
                         </div>
-                        {e.title}
                       </Td>
                       <Td> active</Td>
                       <Td>
@@ -333,16 +333,16 @@ export const Tasktable = () => {
                       <Td>
                         <div style={{ display: "flex", gap: "5px" }}>
                           <FaUserCircle size="20px" />
+                          {e.creator}
                         </div>
-                        {e.creator}
                       </Td>
                       <Td>
                         <div style={{ display: "flex", gap: "5px" }}>
                           <FaUserCircle size="20px" />
+                          {e.assigned.map((el, index) => {
+                            return <p key={index}>{el}</p>;
+                          })}
                         </div>
-                        {e.assigned.map((el, index) => {
-                          return <p key={index}>{el}</p>;
-                        })}
                       </Td>
                       <Td>
                         <Tag

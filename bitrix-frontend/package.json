@@ -26,10 +26,7 @@
     "redux": "^4.2.0",
     "redux-thunk": "^2.4.1",
     "slick-carousel": "^1.8.1",
-
     "string-convert": "^0.2.1",
-
-
     "styled-components": "^5.3.5",
     "web-vitals": "^2.1.4"
   },
@@ -56,5 +53,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "homepage": "."
 }

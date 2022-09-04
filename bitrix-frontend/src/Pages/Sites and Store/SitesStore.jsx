@@ -23,6 +23,8 @@ import { Avatar, Select } from "@chakra-ui/react";
 import { LeftSlider } from "../../Components/LeftSlider";
 
 export const SitesStore = () => {
+  const user = localStorage.getItem("email");
+
   return (
     <div className={classes.mainContainer}>
       <div className={classes.leftSlider}>
@@ -47,7 +49,7 @@ export const SitesStore = () => {
             <div>
               <Select
                 style={{ border: "none", fontSize: "15px", outline: "none" }}
-                placeholder="krishankumarsafi7..."
+                placeholder={user}
               ></Select>
             </div>
           </div>

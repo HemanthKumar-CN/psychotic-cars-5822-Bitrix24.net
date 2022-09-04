@@ -10,6 +10,8 @@ import { Avatar, Select } from "@chakra-ui/react";
 import { LeftSlider } from "../../Components/LeftSlider";
 import { AiOutlineStar } from "react-icons/ai";
 export const Company = () => {
+  const user = localStorage.getItem("email");
+  // console.log(user);
   return (
     <div className={classes.mainContainer}>
       <div className={classes.leftSlider}>
@@ -34,7 +36,7 @@ export const Company = () => {
             <div>
               <Select
                 style={{ border: "none", fontSize: "15px", outline: "none" }}
-                placeholder="krishankumarsafi7..."
+                placeholder={user}
               ></Select>
             </div>
           </div>

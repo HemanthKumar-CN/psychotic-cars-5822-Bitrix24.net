@@ -7,7 +7,7 @@ const login = (payload) => (dispatch) => {
   dispatch({ type: types.LOGIN_REQUEST });
   return axios({
     method: "post",
-    url: "https://stormy-caverns-19491.herokuapp.com/login",
+    url: "https://shielded-plains-50086.herokuapp.com/login",
     data: payload,
   })
     .then((r) => {
@@ -15,7 +15,7 @@ const login = (payload) => (dispatch) => {
       localStorage.setItem("token", r.data.token);
       // localStorage.setItem("", r.data.token);
       dispatch({ type: types.LOGIN_SUCCESS, payload: r.data.token });
-      return types.LOGIN_SUCCESS
+      return types.LOGIN_SUCCESS;
     })
     .catch((e) => dispatch({ type: types.LOGIN_FAILURE }));
 };

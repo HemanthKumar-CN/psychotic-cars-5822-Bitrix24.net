@@ -6,6 +6,8 @@ import { MailLogo } from "../MailLogo";
 import { HelpDrawer } from "../HelpDrawer";
 import classes from "./RightSlider.module.css";
 export const RightSlider = () => {
+  const user = localStorage.getItem("email");
+
   return (
     <div>
       <div className={classes.rightIcon}>
@@ -13,23 +15,25 @@ export const RightSlider = () => {
         <div className={classes.logoBorder}>
           <BiHelpCircle
             onClick={() => console.log("krishan")}
-            style={{ paddingTop: "5px",margin:"auto" }}
+            style={{ paddingTop: "5px", margin: "auto" }}
           />
         </div>
       </div>
       <div className={classes.rightIcon}>
         <div className={classes.logoBorder}>
-          <IoIosNotificationsOutline style={{ paddingTop: "5px",margin:"auto" }} />
+          <IoIosNotificationsOutline
+            style={{ paddingTop: "5px", margin: "auto" }}
+          />
         </div>
       </div>
       <div className={classes.rightIcon}>
         <div className={classes.logoBorder}>
-          <BsChatDots style={{ paddingTop: "5px",margin:"auto" }} />
+          <BsChatDots style={{ paddingTop: "5px", margin: "auto" }} />
         </div>
       </div>
       <div className={classes.rightIcon}>
         <div className={classes.logoBorder}>
-          <BiMessageSquareCheck style={{ paddingTop: "5px",margin:"auto" }} />
+          <BiMessageSquareCheck style={{ paddingTop: "5px", margin: "auto" }} />
         </div>
       </div>
       <div className={classes.rightIcon}>

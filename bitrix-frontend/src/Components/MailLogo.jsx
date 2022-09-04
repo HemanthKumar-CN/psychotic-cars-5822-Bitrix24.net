@@ -14,5 +14,8 @@ const Div = styled.div`
   font-size: 21px;
 `;
 export const MailLogo = () => {
-  return <Div>K</Div>;
+  const user = localStorage.getItem("email");
+  const letter = user.charAt(1);
+  // console.log(letter.toUpperCase());
+  return <Div>{letter.toUpperCase()}</Div>;
 };
