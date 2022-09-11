@@ -14,7 +14,6 @@ import { BiSitemap } from "react-icons/bi";
 
 import { useDisclosure, VStack } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import { Tooltip } from "@chakra-ui/react";
 import { SliderNavbar } from "./SliderNavbar";
 
 export const LeftSlider = () => {
